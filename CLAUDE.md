@@ -50,5 +50,6 @@ Keep card text terse — single words/short phrases ("Confirmed," "Needs verific
 ## Deployment
 
 - Netlify site is linked to this GitHub repo (`stiles-zenni/gt-tracker`, branch `main`) for continuous deployment — pushing `index.html` to `main` is the entire deploy process, no manual Netlify CLI/API calls needed.
-- There is no separate build step. `index.html` is the full site: inline CSS, no JS framework, no external dependencies except system fonts.
+- There is no build step for the site itself. `index.html` is the full site: inline CSS, no JS framework, no external dependencies except system fonts.
 - When iterating on layout/design, test locally by opening `index.html` directly in a browser (or `netlify dev` if you want live reload) before pushing — every push to `main` is a live deploy to the salesperson-facing URL.
+- One small piece of CI does exist: `.github/workflows/merge-claude-branches.yml`. The Claude Code Cloud Routine that runs `ROUTINE.md` daily cannot push straight to `main` — Anthropic's cloud platform redirects its pushes to a `claude/*` branch as a safety default, regardless of what the routine's own prompt says. This workflow fast-forwards `main` to match the instant one of those branches appears, so the routine still ends up fully unattended end-to-end. It doesn't build or compile anything — it only merges.
