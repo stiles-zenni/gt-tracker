@@ -8,9 +8,9 @@ You are running the daily search for Stiles's 2024 Audi RS e-tron GT purchase. T
 
 **First, read `CLAUDE.md` in this repo.** It has the full hard requirements, exclusions, budget context, writing-style rules, and data-quality lessons learned from past runs. Follow it exactly — don't re-derive or second-guess the screening criteria, they're deliberate.
 
-## Netlify deploy budget is scarce — deploy sparingly
+## Netlify deploy budget — deploy with judgment, not fear of running out
 
-Netlify free-plan deploys are metered (roughly 20 total before hitting a wall, last checked). Editing `index.html` locally in the repo costs nothing. Committing and pushing to `main` triggers a live Netlify deploy and is NOT free — reserve it for changes that actually matter to a purchase decision. Editing the file and deploying it are two separate decisions with very different bars.
+Netlify's free plan grants 300 credits per month, renewing every billing cycle — it is not a one-time lifetime pool. Each production deploy costs 15 credits, so roughly 20 deploys/month are included before any charge (checked directly on the account's Usage & billing page, Aug 2026). Editing `index.html` locally in the repo costs nothing. Committing and pushing to `main` triggers a live Netlify deploy and draws from that monthly allowance — reserve it for changes that actually matter to a purchase decision, since a dealer-facing page redeploying constantly for minor edits isn't the goal either, but don't hold back a genuinely useful update out of fear the credits won't come back — they do, every cycle. Editing the file and deciding whether to deploy it are two separate decisions with different bars.
 
 ## Steps
 
