@@ -112,6 +112,15 @@
     border-radius: 14px;
     padding: 14px;
   }
+  .card-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #e8e8ea;
+    display: block;
+  }
   .card-top {
     display: flex;
     justify-content: space-between;
@@ -124,6 +133,18 @@
     color: #1c1c1e;
   }
   .dealer-link a { color: inherit; }
+  .edit-btn {
+    border: none;
+    background: none;
+    color: #8a8a8e;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 4px;
+    margin-left: 2px;
+    vertical-align: middle;
+  }
+  .edit-btn:hover, .edit-btn:active { color: #0a5cd8; }
   .location {
     font-size: 13px;
     color: #6b6b70;
@@ -178,13 +199,42 @@
   .status-sold { color: #c22b2b; }
 
   .card-note {
-    font-size: 12.5px;
-    color: #6b6b70;
     margin-top: 8px;
     padding-top: 8px;
     border-top: 1px solid #f0f0f1;
   }
-  .card-note.warn { color: #b23a2e; }
+  .card-note summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    list-style: none;
+    cursor: pointer;
+  }
+  .card-note summary::-webkit-details-marker { display: none; }
+  .card-note summary::after {
+    content: "▸";
+    flex-shrink: 0;
+    color: #8a8a8e;
+    font-size: 11px;
+    margin-top: 2px;
+    transition: transform 0.15s ease;
+  }
+  .card-note[open] summary::after { transform: rotate(90deg); }
+  .card-note .note-text {
+    flex: 1;
+    font-size: 12.5px;
+    color: #6b6b70;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-note[open] .note-text {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+  .card-note.warn .note-text { color: #b23a2e; }
 
   /* Excluded section */
   details.excluded {
@@ -231,6 +281,67 @@
     text-align: center;
   }
 
+  /* Edit-link modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 100;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    max-width: 360px;
+    width: 100%;
+  }
+  .modal h3 { margin: 0 0 14px; font-size: 16px; }
+  .modal label {
+    display: block;
+    font-size: 12.5px;
+    color: #6b6b70;
+    margin-bottom: 12px;
+  }
+  .modal label .optional { color: #a0a0a5; font-weight: 400; }
+  .modal input {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 8px 10px;
+    border: 1px solid #d0d0d3;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  .modal-status {
+    font-size: 12.5px;
+    color: #6b6b70;
+    min-height: 16px;
+    margin-bottom: 10px;
+  }
+  .modal-status.error { color: #c22b2b; }
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .modal-actions button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-cancel { background: #f0f0f1; color: #1c1c1e; }
+  .btn-save { background: #0a5cd8; color: #fff; }
+  .btn-save:disabled { opacity: 0.6; cursor: default; }
+
   /* Wider screens: two-column card grid */
   @media (min-width: 640px) {
     main { padding: 20px 16px 48px; }
@@ -242,7 +353,7 @@
 
 <header>
   <h1>2024 RS e-tron GT Tracker</h1>
-  <div class="updated">Updated Aug 9, 2026, evening · 5 tracked</div>
+  <div class="updated">Updated Aug 9, 2026, evening · 4 tracked</div>
 </header>
 
 <main>
@@ -276,33 +387,14 @@
     </div>
   </details>
 
-  <div class="section-label">Tracked listings (5)</div>
+  <div class="section-label">Tracked listings (4)</div>
   <div class="listings">
 
-    <div class="card">
+    <div class="card" data-id="guaranteed-motor-cars-lake-villa">
+      <img class="card-thumb" src="images/guaranteed-motor-cars-lake-villa.webp" alt="2024 Audi RS e-tron GT at Guaranteed Motor Cars">
       <div class="card-top">
         <div>
-          <div class="dealer-link"><a href="https://www.audiwest.com/en/inventory/vehicle/?isdealer=&market=usuc&vehicleId=WAUBHBFW8R7900655" target="_blank" rel="noopener">Audi West</a></div>
-          <div class="location">Houston, TX</div>
-        </div>
-        <div class="price">$70,296</div>
-      </div>
-      <div class="spec-row">
-        <span>~12,430 mi</span><span class="sep">·</span><span>Suzuka Gray / Black</span>
-      </div>
-      <div class="tags">
-        <span class="tag tag-ok">✓ Ventilation</span>
-        <span class="tag tag-ok">✓ Roof</span>
-        <span class="tag tag-bonus">Suzuka Gray</span>
-      </div>
-      <div class="status-line status-active">Active — still listed today</div>
-      <div class="card-note">Price appears up from $67,296 (+~$3,000). Seen via cached dealer page only — direct fetch was network-blocked this cycle, confirm before relying on it.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <div class="dealer-link"><a href="https://www.guaranteedmotorcars.com/pre-owned-cars/detail/2024-Audi-RS-e-tron-GT/1513668" target="_blank" rel="noopener">Guaranteed Motor Cars</a></div>
+          <div class="dealer-link"><a href="https://www.guaranteedmotorcars.com/pre-owned-cars/detail/2024-Audi-RS-e-tron-GT/1513668" target="_blank" rel="noopener">Guaranteed Motor Cars</a><button class="edit-btn" data-id="guaranteed-motor-cars-lake-villa" aria-label="Edit listing link">✎</button></div>
           <div class="location">Lake Villa, IL</div>
         </div>
         <div class="price">$71,677</div>
@@ -318,13 +410,16 @@
         <span class="tag tag-bonus">Lowest mileage</span>
       </div>
       <div class="status-line status-active">Active</div>
-      <div class="card-note warn">This dealer has a second, similar Suzuka Gray RS e-tron GT in stock with a carbon-fiber roof and heated-only (not ventilated) seats. Confirm stock #1513668 specifically is the glass-roof/ventilated car before trusting the ✓ tags above. Financing snippet also dropped to $1,302/mo from $1,372/mo — unconfirmed price change, not fetched directly this cycle.</div>
+      <details class="card-note warn">
+        <summary><span class="note-text">This dealer has a second, similar Suzuka Gray RS e-tron GT in stock with a carbon-fiber roof and heated-only (not ventilated) seats. Confirm stock #1513668 specifically is the glass-roof/ventilated car before trusting the ✓ tags above. Financing snippet also dropped to $1,302/mo from $1,372/mo — unconfirmed price change, not fetched directly this cycle.</span></summary>
+      </details>
     </div>
 
-    <div class="card">
+    <div class="card" data-id="auto-web-expo-plano">
+      <img class="card-thumb" src="images/auto-web-expo-plano.jpg" alt="2024 Audi RS e-tron GT at Auto Web Expo, Plano TX">
       <div class="card-top">
         <div>
-          <div class="dealer-link"><a href="https://www.autowebexpo.com/certified-cars" target="_blank" rel="noopener">Auto Web Expo</a></div>
+          <div class="dealer-link"><a href="https://www.cars.com/vehicledetail/bdceb09d-6ae5-43c4-8591-38b62ad84ab1/" target="_blank" rel="noopener">Auto Web Expo</a><button class="edit-btn" data-id="auto-web-expo-plano" aria-label="Edit listing link">✎</button></div>
           <div class="location">Plano, TX</div>
         </div>
         <div class="price">$73,316</div>
@@ -337,13 +432,16 @@
         <span class="tag tag-ok">✓ Roof</span>
       </div>
       <div class="status-line status-active">Active</div>
-      <div class="card-note">No direct listing page found — link goes to dealer's general inventory. Search by VIN WAUBHBFW6R7901593 or call.</div>
+      <details class="card-note">
+        <summary><span class="note-text">Direct listing found via Cars.com (VIN WAUBHBFW6R7901593) — dealer's own site had no working per-vehicle page. Cars.com shows $73,224, a small $92 difference from the price above, likely a display/rounding difference between sources.</span></summary>
+      </details>
     </div>
 
-    <div class="card">
+    <div class="card" data-id="driven-auto-waukegan">
+      <img class="card-thumb" src="images/driven-auto-waukegan.jpg" alt="2024 Audi RS e-tron GT at Driven Auto, Waukegan IL">
       <div class="card-top">
         <div>
-          <div class="dealer-link"><a href="https://www.drivenwaukegan.net/details-2024-audi-rs_e~tron_gt-quattro-used-waubhbfw9r7901510.html" target="_blank" rel="noopener">Driven Auto</a></div>
+          <div class="dealer-link"><a href="https://www.drivenwaukegan.net/details-2024-audi-rs_e~tron_gt-quattro-used-waubhbfw9r7901510.html" target="_blank" rel="noopener">Driven Auto</a><button class="edit-btn" data-id="driven-auto-waukegan" aria-label="Edit listing link">✎</button></div>
           <div class="location">Waukegan, IL</div>
         </div>
         <div class="price">$63,500</div>
@@ -359,13 +457,16 @@
         <span class="tag tag-bonus">Best price</span>
       </div>
       <div class="status-line status-verify">Needs verification call</div>
-      <div class="card-note warn">Sources now contradict each other on basics for this VIN (mileage: 23,011 / 15,352 / 10,570; model year: 2022 / 2024; owner state: CA / MO / NJ; price: $41,981 / $54,934 / $61,988) — too inconsistent to trust automated search. Title status still unresolved: dealer page says "Clear Title," other sources allege a lemon/buyback brand. Do not treat any figure above as current — call the dealer directly and pull the actual CARFAX/AutoCheck report.</div>
+      <details class="card-note warn">
+        <summary><span class="note-text">Sources now contradict each other on basics for this VIN (mileage: 23,011 / 15,352 / 10,570; model year: 2022 / 2024; owner state: CA / MO / NJ; price: $41,981 / $54,934 / $61,988) — too inconsistent to trust automated search. Title status still unresolved: dealer page says "Clear Title," other sources allege a lemon/buyback brand. Do not treat any figure above as current — call the dealer directly and pull the actual CARFAX/AutoCheck report.</span></summary>
+      </details>
     </div>
 
-    <div class="card">
+    <div class="card" data-id="select-auto-imports-alexandria">
+      <img class="card-thumb" src="images/select-auto-imports-alexandria.jpg" alt="2024 Audi RS e-tron GT at Select Auto Imports, Alexandria VA">
       <div class="card-top">
         <div>
-          <div class="dealer-link"><a href="https://www.selectautoimports.com/certified/Audi/2024-Audi-RS-e-tron-GT-510a6e82ac183f938bf553eecff38da1.htm" target="_blank" rel="noopener">Select Auto Imports</a></div>
+          <div class="dealer-link"><a href="https://www.selectautoimports.com/certified/Audi/2024-Audi-RS-e-tron-GT-510a6e82ac183f938bf553eecff38da1.htm" target="_blank" rel="noopener">Select Auto Imports</a><button class="edit-btn" data-id="select-auto-imports-alexandria" aria-label="Edit listing link">✎</button></div>
           <div class="location">Alexandria, VA</div>
         </div>
         <div class="price warn">Conflicting</div>
@@ -379,14 +480,17 @@
         <span class="tag tag-verify">⚠ Price/mileage conflict</span>
       </div>
       <div class="status-line status-verify">Needs verification call</div>
-      <div class="card-note warn">Price/mileage still conflicting across checks: $75,999/10,570mi vs. $42,980/7,385mi vs. a $61,905–$76,998 spread and 20,371mi elsewhere — dealer site was network-blocked this cycle, could not read the page directly to resolve it. One positive: a CARFAX-index snapshot for this VIN shows clean title, no accidents, 1 owner — not yet confirmed by reading the actual report. Call to confirm price/mileage and pull the CARFAX directly.</div>
+      <details class="card-note warn">
+        <summary><span class="note-text">Price/mileage still conflicting across checks: $75,999/10,570mi vs. $42,980/7,385mi vs. a $61,905–$76,998 spread and 20,371mi elsewhere — dealer site was network-blocked this cycle, could not read the page directly to resolve it. One positive: a CARFAX-index snapshot for this VIN shows clean title, no accidents, 1 owner — not yet confirmed by reading the actual report. Call to confirm price/mileage and pull the CARFAX directly.</span></summary>
+      </details>
     </div>
 
   </div>
 
   <details class="excluded">
-    <summary>Excluded / disqualified (12)</summary>
+    <summary>Excluded / disqualified (13)</summary>
     <div class="excluded-list">
+      <div class="excluded-item"><strong>Houston, TX</strong> — Audi West, Suzuka Gray/Black, $70,296 — sold/delisted, dealer page confirms "no longer available" (was tracked, met all hard requirements)</div>
       <div class="excluded-item"><strong>Riverside, CA</strong> — Walter's/Audi Riverside, Suzuka Gray/Black — sold/delisted, confirmed across 3 dealer domains</div>
       <div class="excluded-item"><strong>Sheboygan, WI</strong> — Van Horn, Daytona Gray Pearl/Black, $69,429 — confirmed buyback/lemon title via direct CARFAX review, otherwise met all other requirements</div>
       <div class="excluded-item"><strong>Tempe, AZ</strong> — Cars Land, Tactical Green, no VIN obtained — sold</div>
@@ -408,6 +512,98 @@
   Sources: Cars.com, CarGurus, Edmunds, KBB, individual dealer sites. Not exhaustive — no access to dealer wholesale feeds. Confirm all specs with the dealer before purchase.
 </footer>
 
+<div class="modal-overlay" id="editModalOverlay">
+  <div class="modal">
+    <h3>Update listing link</h3>
+    <label>Vehicle listing URL
+      <input type="url" id="editUrlInput" placeholder="https://...">
+    </label>
+    <label>Image URL <span class="optional">(optional — only needed if auto-detect fails)</span>
+      <input type="url" id="editImageInput" placeholder="https://...">
+    </label>
+    <div class="modal-status" id="editModalStatus"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="editCancelBtn" type="button">Cancel</button>
+      <button class="btn-save" id="editSaveBtn" type="button">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var overlay = document.getElementById('editModalOverlay');
+  var urlInput = document.getElementById('editUrlInput');
+  var imgInput = document.getElementById('editImageInput');
+  var statusEl = document.getElementById('editModalStatus');
+  var saveBtn = document.getElementById('editSaveBtn');
+  var cancelBtn = document.getElementById('editCancelBtn');
+  var currentId = null;
+
+  function openModalFor(btn) {
+    currentId = btn.getAttribute('data-id');
+    var card = btn.closest('.card');
+    var link = card ? card.querySelector('.dealer-link a') : null;
+    urlInput.value = link ? link.href : '';
+    imgInput.value = '';
+    statusEl.textContent = '';
+    statusEl.classList.remove('error');
+    overlay.classList.add('open');
+    urlInput.focus();
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.edit-btn'), function(btn) {
+    btn.addEventListener('click', function() { openModalFor(btn); });
+  });
+
+  cancelBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  saveBtn.addEventListener('click', function() {
+    if (!urlInput.value) {
+      statusEl.textContent = 'URL is required.';
+      statusEl.classList.add('error');
+      return;
+    }
+    saveBtn.disabled = true;
+    statusEl.classList.remove('error');
+    statusEl.textContent = 'Saving… this can take up to a minute while the site rebuilds.';
+
+    fetch('/.netlify/functions/update-listing', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: currentId,
+        newUrl: urlInput.value,
+        manualImageUrl: imgInput.value || undefined
+      })
+    })
+      .then(function(res) {
+        return res.json().then(function(data) { return { ok: res.ok, data: data }; });
+      })
+      .then(function(result) {
+        if (result.ok) {
+          statusEl.textContent = 'Saved. Refresh in a minute to see it live.';
+        } else {
+          statusEl.textContent = 'Error: ' + (result.data && result.data.error ? result.data.error : 'unknown error');
+          statusEl.classList.add('error');
+        }
+      })
+      .catch(function() {
+        statusEl.textContent = 'Network error — try again.';
+        statusEl.classList.add('error');
+      })
+      .finally(function() {
+        saveBtn.disabled = false;
+      });
+  });
+})();
+</script>
+
 </body>
 </html>
-<!-- auto-merge workflow test, safe to ignore -->
