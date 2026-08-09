@@ -43,13 +43,14 @@
   .excluded ul { margin: 0; padding-left: 18px; }
   .excluded li { margin-bottom: 4px; }
   .note { font-size: 12.5px; color: #8a8a8e; margin-top: 6px; }
+  .warn { color: #c22b2b; font-weight: 600; }
   footer { font-size: 12px; color: #a0a0a5; border-top: 1px solid #e5e5e7; padding-top: 12px; margin-top: 8px; }
 </style>
 </head>
 <body>
 
 <h1>2024 Audi RS e-tron GT — Search Tracker</h1>
-<div class="updated">Last updated: August 9, 2026 · Baseline seeded from prior search + one live re-check today</div>
+<div class="updated">Last updated: August 9, 2026 (daily re-check) · 3 status changes found — see notes</div>
 
 <div class="cards">
   <div class="card">
@@ -98,7 +99,7 @@
         <td>~12,430</td>
         <td><span class="bonus">Suzuka Gray</span> / Black</td>
         <td>Confirmed (dealer text)</td>
-        <td><span class="badge badge-verify">Verify by phone</span></td>
+        <td><span class="badge badge-active">Active — still listed on dealer site today</span></td>
       </tr>
       <tr>
         <td class="mono">WAUBHBFW9R7900440</td>
@@ -106,16 +107,16 @@
         <td>$71,585–$74,893</td>
         <td>~12,600</td>
         <td><span class="bonus">Suzuka Gray</span> / Black</td>
-        <td>Confirmed — Full Leather + Carbon Perf.</td>
-        <td><span class="badge badge-active">Active</span></td>
+        <td>Listed equipment shows "Heated Front Sport Seats" only — Full Leather/Carbon Perf. packages also listed but ventilation not spelled out explicitly this check</td>
+        <td><span class="badge badge-ambiguous">Downgraded to verify — ventilation wording inconsistent across sources</span></td>
       </tr>
       <tr>
         <td class="mono">WAUBHBFW2R7901185</td>
         <td>Lake Villa, IL — Guaranteed Motor Cars</td>
-        <td>TBD (~$600 delivery incl.)</td>
+        <td>~$1,261/mo, $2,500 down (total TBD)</td>
         <td>~12,263</td>
         <td><span class="bonus">Suzuka Gray</span> / Black</td>
-        <td>Confirmed — Full Leather + Carbon Perf.</td>
+        <td>Confirmed — Front Sport Seats Pro + Full Leather Interior + Carbon Perf.</td>
         <td><span class="badge badge-active">Active — lowest mileage of qualifiers</span></td>
       </tr>
       <tr>
@@ -134,25 +135,25 @@
         <td>12,394</td>
         <td>Daytona Gray / Black</td>
         <td>Confirmed — cooled seats</td>
-        <td><span class="badge badge-active">Active (as of last check)</span></td>
+        <td><span class="badge badge-active">Active (confirmed again today)</span></td>
       </tr>
       <tr>
         <td class="mono">WAUBHBFW9R7901510</td>
         <td>Waukegan, IL — Driven Auto</td>
-        <td><strong>$63,500</strong></td>
+        <td>$63,500 (last known)</td>
         <td>23,011</td>
         <td>Mythos Black / Black</td>
-        <td>Confirmed — cooled seats</td>
-        <td><span class="badge badge-active">Active — best price so far</span></td>
+        <td>Was confirmed — cooled seats</td>
+        <td><span class="badge badge-sold">Likely sold/delisted — not found in dealer's current used-Audi-e-tron-GT inventory page (only a 2022 model shown)</span></td>
       </tr>
       <tr>
         <td class="mono">WAUBHBFW0R7900603</td>
         <td>Alexandria, VA — Select Auto Imports</td>
-        <td>$75,999</td>
-        <td>10,570</td>
+        <td class="warn">Conflicting: $75,999/10,570mi (prior check) vs. $42,980/7,385mi (today's snippet)</td>
+        <td>See price note</td>
         <td>Mythos Black / Black</td>
-        <td>Confirmed — cooled seats</td>
-        <td><span class="badge badge-active">Active</span></td>
+        <td>Was confirmed — cooled seats (unconfirmed this check)</td>
+        <td><span class="badge badge-ambiguous">Needs verification call — price/mileage data conflict, likely a scraping error but not resolvable from search alone</span></td>
       </tr>
       <tr>
         <td class="mono">WAUBHBFW9R7901667</td>
@@ -161,11 +162,14 @@
         <td><strong>4,167</strong></td>
         <td>Daytona Gray / Black</td>
         <td>Confirmed — cooled seats</td>
-        <td><span class="badge badge-active">Active — lowest mileage overall</span></td>
+        <td><span class="badge badge-ambiguous">Verify by phone — CARFAX-linked search result shows a Buyback/Lemon title on this VIN; confirm before proceeding</span></td>
       </tr>
     </tbody>
   </table>
-  <p class="note">Houston car: search-engine snippet today still shows it indexed as "for sale" (no "sold" language, unlike the delisted Streetsboro OH car), a mild positive signal — but the dealer page didn't render on direct fetch, so treat as unconfirmed until a call or the next automated check.</p>
+  <p class="note">Houston car: now directly confirmed via Audi West's own listing page (indexed today) at $70,296, Suzuka Gray/Black — good sign it's still active, but ventilation is still only dealer-copy text, not phone-verified.</p>
+  <p class="note warn">New this check: Waukegan car (WAUBHBFW9R7901510) no longer appears on Driven Auto's own used-Audi-e-tron-GT inventory page — treat as likely sold pending a call, not confirmed dead.</p>
+  <p class="note warn">New this check: Sheboygan car (WAUBHBFW9R7901667) — a search result tied to CARFAX data describes a Buyback/Lemon title on this VIN. This wasn't previously flagged and should be confirmed or ruled out before any further consideration; a branded title can also affect financing.</p>
+  <p class="note">Riverside car (WAUBHBFW9R7900440): today's dealer-site pull for equipment only surfaced "Heated Front Sport Seats" language, not explicit ventilation/cooling — downgraded from confirmed to verify, since packages that normally include ventilation (Full Leather, Carbon Performance) are still listed. Possibly incomplete equipment scrape rather than an actual spec change.</p>
 </section>
 
 <section>
