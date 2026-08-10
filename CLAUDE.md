@@ -16,12 +16,13 @@ Daily automated search + a public tracker page, previously run inside Anthropic'
 2. **Ventilated/cooled front seats — confirmed via spec/equipment text, not assumed.** Ventilation only comes with the optional Full Leather Interior Package (~$4,500 new), showing up in listings as "Front Sport Seats Pro," "Full Leather Interior," or explicit "ventilation and massage function for front seats." A listing showing only "Heated Seats" does NOT qualify.
 3. **Clean title — no Manufacturer Buyback/Lemon brand.** Non-negotiable regardless of price/condition. If a CARFAX or similar report shows a confirmed Buyback/Lemon brand, exclude outright. If contested/unconfirmed, keep tracked but flagged, don't exclude. A "good value" badge on a dealer/CARFAX page is about pricing, not title brand — not evidence of a clean title.
 4. **Panoramic glass roof — confirmed, not assumed.** The RS trim has a no-cost factory choice between glass roof and carbon-fiber roof; check listed equipment text and window sticker photos. If unstated, mark "Needs verification," don't assume glass. Only exclude once carbon-fiber is actually confirmed. Note: this roof has no retractable shade (factory or otherwise) — heat-reflective glass only, already communicated to Stiles, no need to re-raise it.
+5. **No significant structural/frame damage — confirmed via the actual pulled CARFAX/AutoCheck report, not a dealer-page snapshot badge.** Snapshot/summary "Structural Damage Reported" badges are known to sometimes trigger on minor items (a bumper/fascia repair, a post-repair sensor recalibration) that aren't real frame/unibody damage — treat a badge alone as "needs verification," not confirmed. Only exclude once the full report is actually read and confirms genuine structural/frame damage. Mirrors how title-brand claims are handled below.
 
 ## Preferences (flexible, priority order)
 
-5. Lower mileage preferred.
-6. TX, OK, LA, AR, NM preferred to minimize shipping — out-of-state listings meeting the hard requirements are still worth surfacing, with a rough shipping estimate.
-7. Exterior color flexible (buyer is open to wrapping the car). Suzuka Gray Metallic, Daytona Gray Pearl Effect, and Black are bonus/nice-to-have, not required.
+6. Lower mileage preferred.
+7. TX, OK, LA, AR, NM preferred to minimize shipping — out-of-state listings meeting the hard requirements are still worth surfacing, with a rough shipping estimate.
+8. Exterior color flexible (buyer is open to wrapping the car). Suzuka Gray Metallic, Daytona Gray Pearl Effect, and Black are bonus/nice-to-have, not required.
 
 ## Explicitly excluded
 
@@ -30,6 +31,7 @@ Daily automated search + a public tracker page, previously run inside Anthropic'
 - Heated-only seats, no ventilation confirmation.
 - Confirmed Manufacturer Buyback/Lemon branded title.
 - Confirmed carbon-fiber roof instead of panoramic glass.
+- Confirmed significant structural/frame damage (from the actual report, not a snapshot badge).
 - Sold/delisted vehicles.
 
 ## Budget context (reference only, not something to act on)
