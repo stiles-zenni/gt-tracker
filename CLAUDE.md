@@ -40,6 +40,8 @@ Target all-in price: ~$63,000–$75,000. Target loan: ~$48,000. Trade-in offer $
 
 Keep card text terse — single words/short phrases ("Confirmed," "Needs verification," "Active," "Sold") rather than restating reasoning inline. Put genuinely useful reasoning in the small note line under a card, not repeated across every field.
 
+Every tracked card's `spec-row` must show the VIN, no exceptions — the salesperson needs it to look up the specific car. Don't drop it for space; it's the one field that can't be terse-out.
+
 ## Data-quality lessons learned (apply these)
 
 - Aggregator sites (Cars.com, CarGurus, Edmunds, KBB) have repeatedly shown wrong/mismatched interior colors, prices, and even VINs for the same car across different syndication sites. Prefer the dealer's own listing page or a directly-reviewed CARFAX/window-sticker over aggregator metadata.
