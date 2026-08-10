@@ -43,11 +43,30 @@
     border-bottom: 1px solid var(--hairline);
     padding: 12px 16px;
   }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
   header h1 {
     margin: 0;
     font-size: 17px;
     font-weight: 500;
   }
+  .check-now-btn {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.06);
+    color: var(--fg);
+    border: 1px solid var(--hairline);
+    border-radius: 9999px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  .check-now-btn:disabled { opacity: 0.5; cursor: default; }
   header .updated {
     margin-top: 2px;
     font-size: 12px;
@@ -402,6 +421,64 @@
   .btn-save { background: var(--fg); color: #0a0a0a; }
   .btn-save:disabled { opacity: 0.5; cursor: default; }
 
+  /* Quick-check overlay */
+  .modal.modal-wide {
+    max-width: 480px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .quick-check-disclaimer {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .quick-check-results {
+    overflow-y: auto;
+    flex: 1;
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+  .qc-row {
+    padding: 12px 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .qc-row:first-child { border-top: none; }
+  .qc-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .qc-dealer { font-size: 14px; font-weight: 500; color: var(--fg); }
+  .qc-price { font-family: var(--mono); font-size: 14px; color: var(--fg); white-space: nowrap; }
+  .qc-meta {
+    font-size: 12px;
+    font-family: var(--mono);
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .qc-badges { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+  .qc-badge {
+    font-size: 10.5px;
+    font-family: var(--mono);
+    padding: 2px 8px;
+    border-radius: 9999px;
+    border: 1px solid var(--hairline);
+  }
+  .qc-badge-new { color: var(--success); border-color: var(--success); }
+  .qc-badge-tracked { color: var(--muted); }
+  .qc-badge-excluded { color: var(--bad); }
+  .qc-badge-fresh { color: var(--warn); border-color: var(--warn); }
+  .qc-empty {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    padding: 30px 0;
+  }
+
   /* Wider screens: two-column card grid */
   @media (min-width: 640px) {
     main { padding: 20px 16px 48px; }
@@ -412,7 +489,10 @@
 <body>
 
 <header>
-  <h1>2024 RS e-tron GT Tracker</h1>
+  <div class="header-top">
+    <h1>2024 RS e-tron GT Tracker</h1>
+    <button class="check-now-btn" id="checkNowBtn" type="button">⟳ Check now</button>
+  </div>
   <div class="updated">Updated Aug 9, 2026, evening · 5 tracked</div>
 </header>
 
@@ -450,7 +530,7 @@
   <div class="section-label">Tracked listings (5)</div>
   <div class="listings">
 
-    <div class="card" data-id="guaranteed-motor-cars-lake-villa">
+    <div class="card" data-id="guaranteed-motor-cars-lake-villa" data-vin="WAUBHBFW2R7901185">
       <img class="card-thumb" src="images/guaranteed-motor-cars-lake-villa.webp" alt="2024 Audi RS e-tron GT at Guaranteed Motor Cars">
       <div class="card-top">
         <div>
@@ -479,7 +559,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="auto-web-expo-plano">
+    <div class="card" data-id="auto-web-expo-plano" data-vin="WAUBHBFW6R7901593">
       <img class="card-thumb" src="images/auto-web-expo-plano.jpg" alt="2024 Audi RS e-tron GT at Auto Web Expo, Plano TX">
       <div class="card-top">
         <div>
@@ -505,7 +585,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="driven-auto-waukegan">
+    <div class="card" data-id="driven-auto-waukegan" data-vin="WAUBHBFW9R7901510">
       <img class="card-thumb" src="images/driven-auto-waukegan.jpg" alt="2024 Audi RS e-tron GT at Driven Auto, Waukegan IL">
       <div class="card-top">
         <div>
@@ -533,7 +613,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="select-auto-imports-alexandria">
+    <div class="card" data-id="select-auto-imports-alexandria" data-vin="WAUBHBFW0R7900603">
       <img class="card-thumb" src="images/select-auto-imports-alexandria.jpg" alt="2024 Audi RS e-tron GT at Select Auto Imports, Alexandria VA">
       <div class="card-top">
         <div>
@@ -560,7 +640,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="group1-ford-rockwall">
+    <div class="card" data-id="group1-ford-rockwall" data-vin="WAUBHBFW5R7900435">
       <img class="card-thumb" src="images/group1-ford-rockwall.jpg" alt="2024 Audi RS e-tron GT at Group 1 Ford of Rockwall, TX">
       <div class="card-top">
         <div>
@@ -767,6 +847,116 @@
           saveBtn.disabled = false;
         });
     }
+  });
+})();
+</script>
+
+<div class="modal-overlay" id="quickCheckOverlay">
+  <div class="modal modal-wide">
+    <h3>Market check — Audi RS e-tron GT</h3>
+    <p class="quick-check-disclaimer">Live from Visor, unscreened — not checked for ventilation/roof/title/structural damage. Eyeball for anything worth calling me about; I'll have the routine formally verify before it goes on the tracker.</p>
+    <div class="quick-check-results" id="quickCheckResults">
+      <div class="qc-empty">Checking market…</div>
+    </div>
+    <div class="modal-actions" style="margin-top:14px;">
+      <button class="btn-cancel" id="quickCheckCloseBtn" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var btn = document.getElementById('checkNowBtn');
+  var overlay = document.getElementById('quickCheckOverlay');
+  var results = document.getElementById('quickCheckResults');
+  var closeBtn = document.getElementById('quickCheckCloseBtn');
+  var COOLDOWN_MS = 60000;
+
+  function trackedVins() {
+    return Array.prototype.map.call(document.querySelectorAll('.card[data-vin]'), function(el) {
+      return el.getAttribute('data-vin').toUpperCase();
+    });
+  }
+
+  function excludedVins() {
+    var text = document.querySelector('.excluded-list') ? document.querySelector('.excluded-list').textContent : '';
+    var matches = text.toUpperCase().match(/[A-Z0-9]{17}/g);
+    return matches || [];
+  }
+
+  function isFresh(listedAt) {
+    if (!listedAt) return false;
+    var listedMs = new Date(listedAt).getTime();
+    if (isNaN(listedMs)) return false;
+    return (Date.now() - listedMs) < (48 * 60 * 60 * 1000);
+  }
+
+  function renderResults(listings) {
+    if (!listings || listings.length === 0) {
+      results.innerHTML = '<div class="qc-empty">No active listings found.</div>';
+      return;
+    }
+    var tracked = trackedVins();
+    var excluded = excludedVins();
+    results.innerHTML = listings.map(function(l) {
+      var vin = (l.vin || '').toUpperCase();
+      var badges = '';
+      if (tracked.indexOf(vin) !== -1) {
+        badges += '<span class="qc-badge qc-badge-tracked">Already tracked</span>';
+      } else if (excluded.indexOf(vin) !== -1) {
+        badges += '<span class="qc-badge qc-badge-excluded">Already excluded</span>';
+      } else {
+        badges += '<span class="qc-badge qc-badge-new">New</span>';
+      }
+      if (isFresh(l.listed_at)) {
+        badges += '<span class="qc-badge qc-badge-fresh">🆕 Listed recently</span>';
+      }
+      var price = (typeof l.price === 'number') ? ('$' + l.price.toLocaleString()) : '—';
+      var miles = (typeof l.miles === 'number') ? (l.miles.toLocaleString() + ' mi') : 'miles n/a';
+      var colors = [l.exterior_color, l.interior_color].filter(Boolean).join(' / ') || 'colors n/a';
+      var loc = [l.city, l.state].filter(Boolean).join(', ') || '';
+      var link = l.vdp_url ? '<a href="' + l.vdp_url + '" target="_blank" rel="noopener">' + (l.dealer_name || 'Listing') + '</a>' : (l.dealer_name || 'Listing');
+      return '<div class="qc-row">' +
+        '<div class="qc-row-top"><span class="qc-dealer">' + link + '</span><span class="qc-price">' + price + '</span></div>' +
+        '<div class="qc-meta">' + loc + ' · ' + miles + ' · ' + colors + ' · VIN ' + vin + ' · ' + (l.days_on_market != null ? l.days_on_market + 'd listed' : '') + '</div>' +
+        '<div class="qc-badges">' + badges + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function closeOverlay() { overlay.classList.remove('open'); }
+  closeBtn.addEventListener('click', closeOverlay);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeOverlay(); });
+
+  btn.addEventListener('click', function() {
+    overlay.classList.add('open');
+    results.innerHTML = '<div class="qc-empty">Checking market…</div>';
+    btn.disabled = true;
+    btn.textContent = '⟳ Checking…';
+
+    function reenableNow() {
+      btn.disabled = false;
+      btn.textContent = '⟳ Check now';
+    }
+    function reenableAfterCooldown() {
+      setTimeout(reenableNow, COOLDOWN_MS);
+    }
+
+    fetch('/.netlify/functions/quick-check')
+      .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+      .then(function(result) {
+        if (result.ok) {
+          renderResults(result.data.listings);
+          reenableAfterCooldown();
+        } else {
+          results.innerHTML = '<div class="qc-empty">Error: ' + (result.data && result.data.error ? result.data.error : 'unknown error') + '</div>';
+          reenableNow();
+        }
+      })
+      .catch(function() {
+        results.innerHTML = '<div class="qc-empty">Network error — try again.</div>';
+        reenableNow();
+      });
   });
 })();
 </script>
