@@ -493,7 +493,7 @@
     <h1>2024 RS e-tron GT Tracker</h1>
     <button class="check-now-btn" id="checkNowBtn" type="button">⟳ Check now</button>
   </div>
-  <div class="updated">Updated Aug 12, 2026 · 4 tracked</div>
+  <div class="updated">Updated Aug 12, 2026 · 3 tracked</div>
 </header>
 
 <main>
@@ -527,7 +527,7 @@
     </div>
   </details>
 
-  <div class="section-label">Tracked listings (4)</div>
+  <div class="section-label">Tracked listings (3)</div>
   <div class="listings">
 
     <div class="card" data-id="auto-web-expo-plano" data-vin="WAUBHBFW6R7901593">
@@ -585,32 +585,6 @@
       </details>
     </div>
 
-    <div class="card" data-id="group1-ford-rockwall" data-vin="WAUBHBFW5R7900435">
-      <img class="card-thumb" src="images/group1-ford-rockwall.jpg" alt="2024 Audi RS e-tron GT at Group 1 Mazda, Denton TX">
-      <div class="card-top">
-        <div>
-          <div class="dealer-link"><a href="https://www.group1mazdadenton.com/inventory/used-2024-audi-rs-e-tron-gt-awd-4dr-car-waubhbfw5r7900435/" target="_blank" rel="noopener">Group 1 Mazda Denton</a><button class="edit-btn" data-id="group1-ford-rockwall" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="group1-ford-rockwall" aria-label="Exclude listing">✕</button></div>
-          <div class="location">Denton, TX</div>
-        </div>
-        <div class="price">$76,225</div>
-      </div>
-      <div class="spec-row">
-        <span>14,549 mi</span><span class="sep">·</span><span>Red (visual, not in spec data) / Black</span><span class="sep">·</span><span>VIN WAUBHBFW5R7900435</span>
-      </div>
-      <div class="meta-row">
-        <a class="phone-link" href="tel:+19404897100">(940) 489-7100</a>
-      </div>
-      <div class="tags">
-        <span class="tag tag-ok">✓ Ventilation</span>
-        <span class="tag tag-ok">✓ Roof</span>
-        <span class="tag tag-bonus">TX</span>
-      </div>
-      <div class="status-line status-active">Active</div>
-      <details class="card-note">
-        <summary><span class="note-text">Same VIN, moved lots — now listed by Group 1 Mazda Denton (was Group 1 Ford of Rockwall, same Group 1 Automotive dealer network), link/phone/location updated accordingly. Price down $584 to $76,225. Black interior, Full Leather Interior Package (ventilation), and Panoramic Fixed Glass Roof (3FG) all confirmed directly via VIN build/options data — stronger confirmation than typical listing-text parsing. Exterior color read directly off the listing photo (red), not from structured spec data — not one of the bonus colors, but exterior is flexible per criteria.</span></summary>
-      </details>
-    </div>
-
     <div class="card" data-id="guaranteed-motor-cars-lakevilla-ibiswhite" data-vin="WAUBHBFW6R7900766">
       <img class="card-thumb" src="images/guaranteed-motor-cars-lakevilla-ibiswhite.jpg" alt="2024 Audi RS e-tron GT, Ibis White, Guaranteed Motor Cars Lake Villa">
       <div class="card-top">
@@ -640,8 +614,9 @@
   </div>
 
   <details class="excluded">
-    <summary>Excluded / disqualified (19)</summary>
+    <summary>Excluded / disqualified (20)</summary>
     <div class="excluded-list">
+      <div class="excluded-item"><strong>Denton, TX</strong> — Group 1 Mazda Denton (VIN previously listed by Group 1 Ford of Rockwall, same dealer network), Red/Black, $76,225, 14,549mi, VIN WAUBHBFW5R7900435 — sold/delisted: the dealer's own VDP URL now redirects to their generic inventory page. Visor still showed this VIN as "active" as of its last check (Aug 11, ~24h stale) — dealer's own site is the more current signal for sold/delisted status since Visor only reflects a removal once it re-crawls, and this specific listing had already been pulled by the time Stiles checked directly. Was our most fully-verified match on ventilation/roof/interior; re-add if it resurfaces active anywhere.</div>
       <div class="excluded-item"><strong>Waukegan, IL</strong> — Driven Auto, Mythos Black/Black, $63,500, 23,011mi, VIN WAUBHBFW9R7901510 — confirmed Manufacturer Buyback/Lemon title via full CARFAX (not a snapshot badge): DMV-sourced event "MANUFACTURER BUYBACK OR LEMON REPORTED" (4/2/2026), CARFAX's guaranteed Title History section shows "Lemon: Alert! Problem Found," and the report explicitly flags the vehicle as ineligible for CARFAX's Buyback Guarantee. Seller disclosed the buyback at the 6/18/2026 sale, before Driven Auto acquired it 6/20/2026. This also resolves the long-running "data unreliable / title contested" ambiguity on this VIN — it wasn't bad data, the title really is branded. No structural damage, no accidents reported. Hard-exclude per requirement #3, non-negotiable.</div>
       <div class="excluded-item"><strong>Hollywood, FL</strong> — Gravity Autos Hollywood, Kemora Gray Metallic/Monaco Gray, $76,500, 19,862mi, VIN WAUBHBFW7R7900467 — confirmed carbon-fiber roof: Stiles-reviewed rear-cabin interior photo shows a solid, opaque headliner with no light-transmitting glass panel anywhere across the roof (unlike the clear glass panel visible on other confirmed-glass-roof cars). Was tracked as needs-verification (ventilation confirmed, roof unconfirmed, Monaco Gray interior); roof is now confirmed carbon, hard-exclude per requirement #4.</div>
       <div class="excluded-item"><strong>Livermore, CA</strong> — Audi Livermore, Daytona Gray Pearl/Monaco Gray, $69,054, 27,072mi, VIN WAUBHBFW7R7900095 — likely sold/delisted: Visor's VIN status flipped from active to "missing" and it no longer appears in Visor's nationwide active-inventory search for this model. Not independently confirmed via the dealer's own page (direct fetch blocked from this environment); treat as probable, not certain. Was tracked as needs-verification (Monaco Gray interior, otherwise met ventilation/roof requirements) — re-add if it resurfaces active.</div>
