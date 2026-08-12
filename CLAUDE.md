@@ -12,7 +12,11 @@ Daily automated search + a public tracker page, previously run inside Anthropic'
 
 2024 Audi RS e-tron GT (used).
 
-1. **Black interior.**
+1. **Interior color tier — determines which tracker section a listing goes in, not a pass/fail gate:**
+   - **Perfect Fit**: black interior.
+   - **Alternates**: Monaco Gray or Santos Brown interior. Acceptable because Stiles plans to fully wrap the exterior of any car that isn't Suzuka Gray or Black anyway, and can pick a wrap color that complements either of these interior tones. Track these normally, just in the Alternates section of `index.html` instead of Perfect Fit.
+   - Arras Red interior remains excluded outright (not part of this tiering — see Explicitly excluded below).
+   - Any other interior color not covered above: flag for a call rather than silently excluding or silently tracking, same as always.
 2. **Ventilated/cooled front seats — confirmed via spec/equipment text, not assumed.** Ventilation only comes with the optional Full Leather Interior Package (~$4,500 new) — confirmed across multiple real window stickers plus a general web search, no known exception or standalone alternate path to ventilation. **Confirming the package itself is sufficient on its own — you don't need the word "ventilated" to appear anywhere.** Look for any of: the package named directly ("Full Leather Interior Package," "Full Leather Interior"), Visor's option code `9EF`, or its bundled seat name "Front Sport Seats Pro" / "RS Sport Seats Plus." A listing showing only "Heated Seats" with none of the above does NOT qualify — some northern-climate dealers write "heated" loosely/generically even when the car has the fuller package, so absence of the word "ventilated" in prose is not itself disqualifying either; check for the package, not the word.
 3. **Clean title — no Manufacturer Buyback/Lemon brand.** Non-negotiable regardless of price/condition. If a CARFAX or similar report shows a confirmed Buyback/Lemon brand, exclude outright. If contested/unconfirmed, keep tracked but flagged, don't exclude. A "good value" badge on a dealer/CARFAX page is about pricing, not title brand — not evidence of a clean title.
 4. **Panoramic glass roof — confirmed, not assumed.** The RS trim has a no-cost factory choice between glass roof and carbon-fiber roof.
@@ -33,7 +37,6 @@ Daily automated search + a public tracker page, previously run inside Anthropic'
 ## Explicitly excluded
 
 - Arras Red interior.
-- Monaco Gray interior (unless separately confirmed acceptable — flag ambiguous cars for a call rather than excluding outright).
 - Heated-only seats, no ventilation confirmation.
 - Confirmed Manufacturer Buyback/Lemon branded title.
 - Confirmed carbon-fiber roof instead of panoramic glass.
@@ -49,6 +52,8 @@ Target all-in price: ~$63,000–$75,000. Target loan: ~$48,000. Trade-in offer $
 Keep card text terse — single words/short phrases ("Confirmed," "Needs verification," "Active," "Sold") rather than restating reasoning inline. Put genuinely useful reasoning in the small note line under a card, not repeated across every field.
 
 Every tracked card's `spec-row` must show the VIN, no exceptions — the salesperson needs it to look up the specific car. Don't drop it for space; it's the one field that can't be terse-out.
+
+Tracked listings are split into two `.listings` blocks under separate `.section-label`s: **Perfect Fit** (black interior) and **Alternates** (Monaco Gray / Santos Brown interior), each with its own `(N)` count in the label — see requirement #1. A given car only ever belongs in one of the two; move it between sections if new info changes its interior-color read. Keep both sections' counts and the header's overall "N tracked" total in sync when adding/removing a card.
 
 ## Data-quality lessons learned (apply these)
 

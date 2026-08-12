@@ -43,7 +43,7 @@ exports.handler = async (event) => {
   const fileData = await fileRes.json();
   const currentHtml = Buffer.from(fileData.content, "base64").toString("utf-8");
 
-  const cardRegex = new RegExp(`\\s*<div class="card" data-id="${id}">[\\s\\S]*?\\n    </div>\\n`);
+  const cardRegex = new RegExp(`\\s*<div class="card" data-id="${id}"[^>]*>[\\s\\S]*?\\n    </div>\\n`);
   const cardMatch = currentHtml.match(cardRegex);
   if (!cardMatch) {
     return { statusCode: 404, body: JSON.stringify({ error: `No card found with id "${id}"` }) };
@@ -55,10 +55,25 @@ exports.handler = async (event) => {
   const dealerName = dealerMatch ? dealerMatch[1] : "Unknown dealer";
   const location = locationMatch ? locationMatch[1] : "Unknown location";
 
+  // Figure out which section (Perfect Fit / Alternates) this card belongs to, so its
+  // own count gets decremented rather than a single hardcoded "Tracked listings" label.
+  const cardIndex = currentHtml.indexOf(cardBlock);
+  const beforeCard = currentHtml.slice(0, cardIndex);
+  const sectionLabelRe = /<div class="section-label">([^(<]+)\((\d+)\)<\/div>/g;
+  let sectionMatch, lastSectionMatch;
+  while ((sectionMatch = sectionLabelRe.exec(beforeCard)) !== null) {
+    lastSectionMatch = sectionMatch;
+  }
+
   // Remove the card, keeping a single blank-line gap between the neighbors it leaves behind.
   let updatedHtml = currentHtml.replace(cardBlock, "\n\n");
 
-  updatedHtml = updatedHtml.replace(/Tracked listings \((\d+)\)/, (m, n) => `Tracked listings (${parseInt(n, 10) - 1})`);
+  if (lastSectionMatch) {
+    const [, labelName, count] = lastSectionMatch;
+    const oldLabel = `<div class="section-label">${labelName}(${count})</div>`;
+    const newLabel = `<div class="section-label">${labelName}(${parseInt(count, 10) - 1})</div>`;
+    updatedHtml = updatedHtml.replace(oldLabel, newLabel);
+  }
   updatedHtml = updatedHtml.replace(/(\d+) tracked/, (m, n) => `${parseInt(n, 10) - 1} tracked`);
   updatedHtml = updatedHtml.replace(/Excluded \/ disqualified \((\d+)\)/, (m, n) => `Excluded / disqualified (${parseInt(n, 10) + 1})`);
 

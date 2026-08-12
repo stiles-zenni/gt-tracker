@@ -88,7 +88,7 @@ exports.handler = async (event) => {
 
   // 3. Locate the specific card by data-id and patch its href (+ img src if we have a new image).
   const cardRegex = new RegExp(
-    `(<div class="card" data-id="${id}">[\\s\\S]*?\\n    </div>)`
+    `(<div class="card" data-id="${id}"[^>]*>[\\s\\S]*?\\n    </div>)`
   );
   const cardMatch = currentHtml.match(cardRegex);
   if (!cardMatch) {
