@@ -2,9 +2,12 @@ name: Merge Claude routine branches
 
 # The Claude Code Cloud Routine pushes its daily changes to a claude/*
 # branch instead of main (a platform-level safety default, not something
-# ROUTINE.md's prompt controls). This workflow fast-forwards main to match
-# as soon as one of those branches is pushed, so Netlify's existing
-# git-integration deploy still fires with no human step in between.
+# ROUTINE.md's prompt controls). This workflow merges that branch into main
+# as soon as it's pushed, so Netlify's existing git-integration deploy still
+# fires with no human step in between. Uses --no-ff rather than --ff-only so
+# it doesn't fail just because main moved (e.g. an interactive push) since
+# the branch was cut — a real content conflict still fails the job, which is
+# the right outcome for that case.
 on:
   push:
     branches:
@@ -23,12 +26,12 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Fast-forward main to the routine's branch
+      - name: Merge the routine's branch into main
         run: |
           git config user.name "gt-tracker-bot"
           git config user.email "actions@github.com"
           git fetch origin "${{ github.ref_name }}"
-          git merge --ff-only "origin/${{ github.ref_name }}"
+          git merge --no-ff --no-edit "origin/${{ github.ref_name }}"
           git push origin main
 
       - name: Delete merged branch
