@@ -493,7 +493,7 @@
     <h1>2024 RS e-tron GT Tracker</h1>
     <button class="check-now-btn" id="checkNowBtn" type="button">⟳ Check now</button>
   </div>
-  <div class="updated">Updated Aug 12, 2026 · 4 tracked</div>
+  <div class="updated">Updated Aug 13, 2026 · 5 tracked</div>
 </header>
 
 <main>
@@ -618,8 +618,35 @@
 
   </div>
 
-  <div class="section-label">Alternates (1)</div>
+  <div class="section-label">Alternates (2)</div>
   <div class="listings">
+
+    <div class="card" data-id="lincoln-of-bloomington-santosbrown" data-vin="WAUBHBFW9R7901698">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.lincolnofbloomington.com/viewdetails/used/waubhbfw9r7901698/2024-audi-rs-e-tron-gt-4dr-car?type=finance" target="_blank" rel="noopener">Lincoln of Bloomington</a><button class="edit-btn" data-id="lincoln-of-bloomington-santosbrown" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="lincoln-of-bloomington-santosbrown" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Bloomington, MN</div>
+        </div>
+        <div class="price">$68,338</div>
+      </div>
+      <div class="spec-row">
+        <span>8,966 mi</span><span class="sep">·</span><span>Mythos Black / Santos Brown</span><span class="sep">·</span><span>VIN WAUBHBFW9R7901698</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+19522301668">(952) 230-1668</a>
+        <span class="dom">~5 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation (Visor build data, 9EF)</span>
+        <span class="tag tag-ok">✓ Roof (Visor build data, 3FG)</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+        <span class="tag tag-verify">? No structural damage — needs verification</span>
+      </div>
+      <div class="status-line status-verify">Needs verification — call to confirm title</div>
+      <details class="card-note warn">
+        <summary><span class="note-text">Re-added: was previously excluded solely for Santos Brown interior, which is now an accepted Alternate tier per updated criteria — that exclusion no longer applies. Ventilation and panoramic glass roof both confirmed via Visor's build/options data (explicit codes 9EF and 3FG) before Visor's API went into a billing-blocked state today. Title and structural-damage status could not be verified this run: Visor is down (billing block), the dealer's own site is blocked from this environment's network egress, and a WebSearch query returned an inconsistent, unsourced claim of a possible branded title that cited no VIN-specific primary source — not trusted per data-quality rules. Call the dealer to confirm title/history directly before treating as viable.</span></summary>
+      </details>
+    </div>
 
     <div class="card" data-id="audi-tysons-corner-vienna" data-vin="WAUBHBFW5R7901732">
       <div class="card-top">
@@ -651,14 +678,13 @@
   </div>
 
   <details class="excluded">
-    <summary>Excluded / disqualified (20)</summary>
+    <summary>Excluded / disqualified (19)</summary>
     <div class="excluded-list">
       <div class="excluded-item"><strong>Denton, TX</strong> — Group 1 Mazda Denton (VIN previously listed by Group 1 Ford of Rockwall, same dealer network), Red/Black, $76,225, 14,549mi, VIN WAUBHBFW5R7900435 — sold/delisted: the dealer's own VDP URL now redirects to their generic inventory page. Visor still showed this VIN as "active" as of its last check (Aug 11, ~24h stale) — dealer's own site is the more current signal for sold/delisted status since Visor only reflects a removal once it re-crawls, and this specific listing had already been pulled by the time Stiles checked directly. Was our most fully-verified match on ventilation/roof/interior; re-add if it resurfaces active anywhere.</div>
       <div class="excluded-item"><strong>Waukegan, IL</strong> — Driven Auto, Mythos Black/Black, $63,500, 23,011mi, VIN WAUBHBFW9R7901510 — confirmed Manufacturer Buyback/Lemon title via full CARFAX (not a snapshot badge): DMV-sourced event "MANUFACTURER BUYBACK OR LEMON REPORTED" (4/2/2026), CARFAX's guaranteed Title History section shows "Lemon: Alert! Problem Found," and the report explicitly flags the vehicle as ineligible for CARFAX's Buyback Guarantee. Seller disclosed the buyback at the 6/18/2026 sale, before Driven Auto acquired it 6/20/2026. This also resolves the long-running "data unreliable / title contested" ambiguity on this VIN — it wasn't bad data, the title really is branded. No structural damage, no accidents reported. Hard-exclude per requirement #3, non-negotiable.</div>
       <div class="excluded-item"><strong>Hollywood, FL</strong> — Gravity Autos Hollywood, Kemora Gray Metallic/Monaco Gray, $76,500, 19,862mi, VIN WAUBHBFW7R7900467 — confirmed carbon-fiber roof: Stiles-reviewed rear-cabin interior photo shows a solid, opaque headliner with no light-transmitting glass panel anywhere across the roof (unlike the clear glass panel visible on other confirmed-glass-roof cars). Was tracked as needs-verification (ventilation confirmed, roof unconfirmed, Monaco Gray interior); roof is now confirmed carbon, hard-exclude per requirement #4.</div>
       <div class="excluded-item"><strong>Livermore, CA</strong> — Audi Livermore, Daytona Gray Pearl/Monaco Gray, $69,054, 27,072mi, VIN WAUBHBFW7R7900095 — likely sold/delisted: Visor's VIN status flipped from active to "missing" and it no longer appears in Visor's nationwide active-inventory search for this model. Not independently confirmed via the dealer's own page (direct fetch blocked from this environment); treat as probable, not certain. Was tracked as needs-verification (Monaco Gray interior, otherwise met ventilation/roof requirements) — re-add if it resurfaces active.</div>
       <div class="excluded-item"><strong>Lake Villa, IL</strong> — Guaranteed Motor Cars, stock #1513668, VIN WAUBHBFW2R7901185 — Visor's VIN registry now confirms this exact VIN sold (by ANF Auto Finance, Houston TX, 5/12/26), Arkona White exterior, no ventilation/glass-roof option codes — directly contradicting the dealer's own listing text (Suzuka Gray, full leather). Too unreliable to keep tracking; dropped rather than call on data this inconsistent.</div>
-      <div class="excluded-item"><strong>Bloomington, MN</strong> — Lincoln of Bloomington, Mythos Black Metallic/Santos Brown Nappa Leather, $68,338, 8,966mi, VIN WAUBHBFW9R7901698 — Santos Brown interior confirmed via VIN build data, fails black-interior hard requirement; excluded outright.</div>
       <div class="excluded-item"><strong>Jacksonville, FL</strong> — World Imports/Lotus of Jacksonville, White, $67,077, 4,307mi, VIN WAUBHBFW6R7901481 — confirmed Manufacturer Buyback directly on the dealer's own listing (Model Code field), also Charcoal interior (not black) and no ventilation in listed highlights. Fails three separate hard requirements; excluded outright.</div>
       <div class="excluded-item"><strong>Houston, TX</strong> — Audi West, Suzuka Gray/Black, $70,296 — sold/delisted, dealer page confirms "no longer available" (was tracked, met all hard requirements)</div>
       <div class="excluded-item"><strong>Riverside, CA</strong> — Walter's/Audi Riverside, Suzuka Gray/Black — sold/delisted, confirmed across 3 dealer domains</div>
