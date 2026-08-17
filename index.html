@@ -147,6 +147,8 @@
     border-radius: 0;
     padding: 14px;
   }
+  .card[data-detail] { cursor: pointer; }
+  .card[data-detail]:hover { border-color: rgba(255,255,255,0.28); }
   .card-thumb {
     width: calc(100% + 28px);
     margin: -14px -14px 10px;
@@ -558,7 +560,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="auto-web-expo-plano" data-vin="WAUBHBFW6R7901593">
+    <div class="card" data-id="auto-web-expo-plano" data-vin="WAUBHBFW6R7901593" data-detail="listings/plano.html">
       <img class="card-thumb" src="images/auto-web-expo-plano.jpg" alt="2024 Audi RS e-tron GT at Auto Web Expo, Plano TX">
       <div class="card-top">
         <div>
@@ -895,6 +897,15 @@
           saveBtn.disabled = false;
         });
     }
+  });
+})();
+
+(function() {
+  Array.prototype.forEach.call(document.querySelectorAll('.card[data-detail]'), function(card) {
+    card.addEventListener('click', function(e) {
+      if (e.target.closest('a, button')) return;
+      window.location.href = card.getAttribute('data-detail');
+    });
   });
 })();
 </script>

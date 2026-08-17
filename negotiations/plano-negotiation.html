@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plano — Negotiation Prep</title>
+<style>
+:root{color-scheme:light;--surface-1:#fcfcfb;--plane:#f9f9f7;--text-primary:#0b0b0b;
+ --text-secondary:#52514e;--muted:#898781;--grid:#e1e0d9;--border:rgba(11,11,11,0.10);
+ --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--good:#0ca30c;--warning:#fab219;--critical:#d03b3b;--good-text:#006300}
+:root[data-theme="dark"]{color-scheme:dark;--surface-1:#1a1a19;--plane:#0d0d0d;--text-primary:#fff;
+ --text-secondary:#c3c2b7;--muted:#898781;--grid:#2c2c2a;--border:rgba(255,255,255,0.10);
+ --s1:#3987e5;--s2:#d95926;--s3:#199e70;--good-text:#0ca30c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--plane);color:var(--text-primary);
+ font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.55}
+.wrap{max-width:800px;margin:0 auto;padding:24px 18px 80px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:20px}
+h1{font-size:25px;margin:0 0 4px;letter-spacing:-0.025em}
+.sub{color:var(--text-secondary);font-size:14px;margin:0}
+h2{font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600;margin:0 0 11px}
+h3{font-size:17px;margin:0 0 6px;letter-spacing:-0.015em}
+section{margin-top:28px}
+.card{background:var(--surface-1);border:1px solid var(--border);border-radius:14px;padding:20px 22px}
+.btn{background:var(--surface-1);color:var(--text-primary);border:1px solid var(--border);
+ border-radius:9px;padding:8px 14px;font-size:13px;cursor:pointer;font-family:inherit}
+p{margin:0 0 12px}
+.note{font-size:13.5px;color:var(--text-secondary)}
+.stop{border-left:5px solid var(--critical);padding:18px 22px}
+.stoptag{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--critical);margin-bottom:7px}
+.q{display:grid;grid-template-columns:26px 1fr;gap:11px;padding:11px 0;border-bottom:1px solid var(--grid)}
+.q:last-child{border-bottom:none}
+.q .n{width:22px;height:22px;border-radius:6px;background:var(--s1);color:#fff;font-size:11.5px;
+ font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.q .n.red{background:var(--critical)}
+.q .t{font-weight:600;font-size:14.5px;margin-bottom:2px}
+.q .w{font-size:13px;color:var(--text-secondary)}
+.say{background:var(--plane);border-left:3px solid var(--s3);padding:11px 14px;border-radius:0 8px 8px 0;
+ font-size:14px;margin:9px 0 0;font-style:italic}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
+th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+ font-weight:600;padding:8px 6px;border-bottom:1px solid var(--grid)}
+td{padding:9px 6px;border-bottom:1px solid var(--grid);font-variant-numeric:tabular-nums}
+td.r,th.r{text-align:right}
+tr.hi td{background:color-mix(in srgb,var(--s3) 10%,transparent);font-weight:600}
+tr.ask td{color:var(--muted)}
+.pill{font-size:10.5px;padding:2px 8px;border-radius:99px;border:1px solid var(--border);color:var(--text-secondary)}
+.p-good{border-color:var(--good);color:var(--good-text);font-weight:600}
+.lev{display:grid;grid-template-columns:1fr;gap:9px}
+.lev div{display:grid;grid-template-columns:auto 1fr;gap:10px;font-size:14px;align-items:baseline}
+.lev b{color:var(--s3)}
+.warnbox{border-left:4px solid var(--warning);padding-left:13px;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+ul{margin:0 0 10px;padding-left:19px}li{margin-bottom:5px}
+.big{font-size:30px;font-weight:600;letter-spacing:-0.03em}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.calc label{display:block;font-size:12.5px;color:var(--text-secondary);margin-bottom:4px}
+.calc input{width:100%;padding:9px 11px;font-family:inherit;font-size:15px;border:1px solid var(--border);
+ border-radius:9px;background:var(--plane);color:var(--text-primary);font-variant-numeric:tabular-nums}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:14px}
+.out div{background:var(--plane);border-radius:10px;padding:11px 13px}
+.out .k{font-size:11.5px;color:var(--muted)}
+.out .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.backlink{display:inline-block;margin-bottom:14px;font-size:13px;color:var(--text-secondary);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:9px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="backlink" href="../listings/plano.html">&larr; Back to listing</a>
+
+<div class="top">
+  <div>
+    <h1>Auto Web Expo — Plano</h1>
+    <p class="sub">2024 Audi RS e-tron GT &middot; VIN …901593 &middot; asking $73,224 &middot; 12,394 mi &middot; <b>145 days listed</b> <span class="note" style="font-size:11px">(verified: Visor + CARFAX both show 03/19/2026)</span></p>
+  </div>
+  <button class="btn" id="theme">Dark</button>
+</div>
+
+<!-- STOP -->
+<section>
+  <div class="card" style="border-left:5px solid var(--good);padding:18px 22px">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--good-text);margin-bottom:7px">Window sticker received — all three requirements confirmed</div>
+    <h3 style="margin-bottom:8px">This car qualifies. The roof question is resolved.</h3>
+    <table style="margin:10px 0 12px">
+      <tbody>
+        <tr><td><b>Panoramic roof</b></td><td>"Panoramic Roof, Sun/Moonroof" listed under Exterior</td><td class="r"><span class="pill p-good">✓ confirmed</span></td></tr>
+        <tr><td><b>Ventilated seats</b></td><td>$4,500 interior package — "Cooled Front Seat", massaging, heated wheel</td><td class="r"><span class="pill p-good">✓ confirmed</span></td></tr>
+        <tr><td><b>Black interior</b></td><td>Interior: <b>Black (JN)</b></td><td class="r"><span class="pill p-good">✓ confirmed</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-bottom:0">Visor's feed was missing the <b>3FG</b> code — a data gap, not a missing
+    feature, exactly as suspected. One caveat: this is a VIN-decoded sticker watermarked "not original copy," not the
+    factory Monroney. It's solid evidence, but a single photo of the headliner would close it completely.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What the sticker changed</h2>
+  <div class="card grid2">
+    <div>
+      <h3 style="font-size:15.5px">MSRP was $158,690</h3>
+      <p class="note" style="margin-bottom:0">Higher than the ~$147,000 I'd assumed. At $73,224 you'd buy at
+      <b>46% of sticker</b> — the first owner absorbed <b>$85,466</b>, about $42,700 a year. That's the strongest
+      argument for buying this car used and the weakest argument for haggling too hard: someone already took the hit.</p>
+    </div>
+    <div>
+      <h3 style="font-size:15.5px">It's well optioned — expect them to say so</h3>
+      <p class="note" style="margin-bottom:0">$10,095 in options: Carbon Performance Package ($5,000, all-wheel
+      steering), the interior package ($4,500), Daytona Gray ($595). KBB's $67,400 reflects a generic configuration
+      and under-weights this car. <b>Their counter will be "look at the options." Your answer is "and it's been
+      sitting 145 days."</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS -->
+<section>
+  <h2>Ask these, in this order</h2>
+  <div class="card">
+    <div class="q" style="opacity:.45"><div class="n" style="background:var(--good)">✓</div><div>
+      <div class="t">Can you send me the original window sticker or build sheet?</div>
+      <div class="w">This is the single highest-value question. It lists every factory option code and settles the
+      roof, the interior colour and the ventilated seats in one document. Audi dealers can pull it by VIN.</div>
+      <div class="say">"Before we talk numbers — could you send me the window sticker or the build sheet for VIN
+      WAUBHBFW6R7901593? I want to confirm the factory options."</div>
+    </div></div>
+    <div class="q" style="opacity:.45"><div class="n" style="background:var(--good)">✓</div><div>
+      <div class="t">Transmission — resolved, no action needed</div>
+      <div class="w">Listing shows "1-Speed Automatic," sticker shows the correct <b>2-Speed Automatic</b>. Confirmed
+      typo on the dealer's/aggregator's feed, not a real drivetrain discrepancy. Closed.</div>
+    </div></div>
+    <div class="q" style="opacity:.45"><div class="n" style="background:var(--good)">✓</div><div>
+      <div class="t">Panoramic roof — resolved, confirmed by photo</div>
+      <div class="w">Interior headliner photo confirms the glass panoramic roof directly. Closed.</div>
+    </div></div>
+    <div class="q" style="opacity:.45"><div class="n" style="background:var(--good)">✓</div><div>
+      <div class="t">Title clean — resolved, confirmed by CARFAX</div>
+      <div class="w">CARFAX shows no buyback, lemon or branded history. One of the eight cars nationally with a title
+      problem would've shown up here, so this is a real check, not a formality. AutoCheck occasionally catches
+      something CARFAX misses — worth a quick pull if you want belt-and-suspenders, but not blocking.</div>
+    </div></div>
+    <div class="q"><div class="n red">4</div><div>
+      <div class="t">Battery state-of-health — declined, but this is a small contingency, not a big discount lever</div>
+      <div class="w">Asked. His answer: it was "serviced direct from Audi" before arriving, and he's treating that
+      as sufficient. It isn't — a routine service visit isn't a capacity/SOH reading. But a real SOH check runs
+      only <b>~$200–300</b> at any Audi dealer, which means this isn't the "undocumented, unknowable risk" that
+      justifies a big price concession — it's a small, resolvable cost. Don't lean on it as leverage for the
+      opening number. Use it as a narrow, concrete ask instead: either a short pre-sale contingency where you get
+      it checked before signing, or have them cover/split the $200–300 as a condition of sale. Both are easy "yes"
+      asks precisely because the number is small.</div>
+      <div class="say">"One small thing before we finalize — I'd like to get a battery health check done at a
+      local Audi dealer, runs about $200–300. Either I do that before we sign, or you cover it as part of the
+      deal — either way works, I just want real data on the one component I can't inspect myself."</div>
+    </div></div>
+    <div class="q" style="opacity:.45"><div class="n" style="background:var(--good)">✓</div><div>
+      <div class="t">Service records and how they got the car — resolved via CARFAX</div>
+      <div class="w">Full history checks out: personal lease return (San Antonio) → serviced at Audi Denver at
+      12,374 mi (02/26/2026) → sold through a manufacturer/wholesale channel at 12,394 mi (03/19/2026) → arrived
+      and PDI'd at Auto Web Expo (04/07/2026). Not an auction or repo car. The salesperson's "serviced right before
+      it came to our dealership about 20 miles ago" is exactly right — 12,374 to 12,394 is 20 miles. Closed, and a
+      good trust signal for the rest of what they tell you.</div>
+    </div></div>
+    <div class="q" style="opacity:.45"><div class="n" style="background:var(--good)">✓</div><div>
+      <div class="t">"Why hasn't it sold?" — asked, got a scripted deflection</div>
+      <div class="w">Their answer: <i>"These are high-performance, specialized vehicles... it just takes the right
+      buyer... would you be open to coming in for a test drive?"</i> That's boilerplate — no real reason given, and
+      no mention of the price bouncing around all spring. Not a red flag by itself (most salespeople deflect this
+      exact question the same way), but it didn't add information either. Treat it as closed, not answered.</div>
+      <div class="say">Don't push harder on this one — you already have the real answer from Visor's price history,
+      which is better than anything they'd volunteer. Use the test-drive invite as leverage instead: agree to come
+      in, but get the itemized OTD number and a straight answer on the battery SOH <b>before</b> you drive out
+      there, so the visit is about closing, not fact-finding. "Happy to come see it — can you send the out-the-door
+      breakdown and let me know on the battery diagnostic first, so I know we're close before I make the trip?"</div>
+    </div></div>
+    <div class="q"><div class="n">7</div><div>
+      <div class="t">"What's your out-the-door number, itemised?"</div>
+      <div class="w">Never negotiate a monthly payment — that's how the term gets stretched and add-ons get buried.
+      Ask for vehicle price, doc fee, title and registration, tax, and any dealer add-ons as separate lines.</div>
+      <div class="say">"Can you send me a full out-the-door breakdown — vehicle price, doc fee, TT&amp;L, and
+      anything else — as separate line items?"</div>
+    </div></div>
+  </div>
+</section>
+
+<!-- LEVERAGE -->
+<section>
+  <h2>What you have going for you</h2>
+  <div class="card lev">
+    <div><b>145 days</b><span>Listed since 03/19/2026, verified independently by Visor and CARFAX. Independent
+      dealers finance inventory — this car is costing them money every month, and an EV that's sat this long is a
+      known problem in their stock.</span></div>
+    <div><b>$69,696 — three weeks ago</b><span>Visor's price history shows this isn't a firm, slowly-declining
+      price. It's swung repeatedly (as high as $78,989 in March, as low as $69,696 on 07/22/2026) before jumping
+      back up to $73,224 on 08/06/2026 — five days before you started talking. They've already priced it below KBB
+      fair value once this month. That's a concrete, factual anchor, not your opinion: <b>"you had this listed at
+      $69,696 three weeks ago."</b></span></div>
+    <div><b>$67,400</b><span>KBB fair purchase price — $5,824 below asking. That's your anchor, and it's a
+      neutral third-party number rather than your opinion.</span></div>
+    <div><b>Real comps, nationally</b><span>Audi Riverside has a near-identical build — same Daytona Gray Pearl
+      exterior, same panoramic roof (3FG) and full leather/ventilation package (9EF), 14,415 mi — at $72,997. That's
+      not a cheaper alternative to threaten walking to; it's proof this segment prices right around $70–73k, which
+      backs up the KBB number and shows you've researched the market broadly, not just this one car.</span></div>
+    <div><b>Clean buyer</b><span>Trade in hand, financing you can arrange yourself, no contingency. Dealers
+      discount for certainty.</span></div>
+    <div><b>Mid-month</b><span>Month-end is roughly three weeks out. If they won't move now, going quiet and
+      circling back on the 29th–31st is a real tactic.</span></div>
+    <div><b>Battery check, $200–300</b><span>They confirmed they can't produce a state-of-health reading —
+      "serviced at Audi" isn't a substitute. Not a big-discount argument on its own (the check itself is cheap and
+      you could just go get it), but a legitimate small ask: a pre-sale contingency, or have them cover the
+      $200–300. Don't inflate this into more leverage than it is.</span></div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="warnbox">
+      <b>What they have on you:</b> very few of these nationally match on paper, and even fewer hold up once you
+      actually verify roof, title and interior — several apparent matches have turned out to have a real
+      disqualifier once checked. Don't let scarcity slip into your voice, but don't assume there's an easy
+      walk-away alternative either — verify before you rely on one.
+    </div>
+    <p class="note" style="margin-bottom:0">Handle the trade <b>after</b> the vehicle price is agreed. The oldest
+    move in the business is a generous trade number paired with a stiff car price. You have a written
+    <b>$12,150</b> offer as a floor — keep it in your pocket until the price is locked.</p>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section>
+  <h2>Your numbers — all at 72 months / 8.4% (Capital One, confirmed with $10k+ down), $12,150 trade, $10,000 cash</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Vehicle price</th><th class="r">TX tax</th><th class="r">Out-the-door</th>
+        <th class="r">Financed</th><th class="r">Payment</th><th class="r">All-in/mo</th><th class="r">Interest</th></tr></thead>
+      <tbody>
+        <tr class="ask"><td>$73,224 <span class="pill">asking</span></td><td class="r">$3,830</td><td class="r">$77,454</td><td class="r">$55,304</td><td class="r">$980.55</td><td class="r">$1,475.26</td><td class="r">$15,296</td></tr>
+        <tr><td>$71,000 <span class="pill" style="border-color:var(--critical);color:var(--critical)">walk-away ceiling</span></td><td class="r">$3,691</td><td class="r">$75,091</td><td class="r">$52,941</td><td class="r">$938.60</td><td class="r">$1,433.31</td><td class="r">$14,638</td></tr>
+        <tr class="hi"><td>$69,500 <span class="pill p-good">realistic target</span></td><td class="r">$3,597</td><td class="r">$73,497</td><td class="r">$51,347</td><td class="r">$910.34</td><td class="r">$1,405.05</td><td class="r">$14,198</td></tr>
+        <tr><td>$67,400 <span class="pill">KBB fair — stretch</span></td><td class="r">$3,466</td><td class="r">$71,266</td><td class="r">$49,116</td><td class="r">$870.83</td><td class="r">$1,365.54</td><td class="r">$13,584</td></tr>
+        <tr><td>$66,500 <span class="pill">your opening</span></td><td class="r">$3,409</td><td class="r">$70,309</td><td class="r">$48,159</td><td class="r">$853.86</td><td class="r">$1,348.57</td><td class="r">$13,319</td></tr>
+        <tr><td>$65,000 <span class="pill">aggressive fallback</span></td><td class="r">$3,316</td><td class="r">$68,716</td><td class="r">$46,566</td><td class="r">$825.60</td><td class="r">$1,320.31</td><td class="r">$12,877</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:14px;margin-bottom:0">Every <b>$1,000</b> off the price is <b>$1,063</b> off
+    out-the-door once tax follows it down, and <b>$17.73/mo</b>. All of these clear your 20/4/10 ceiling of
+    $1,745.62 — the constraint here is what you're willing to pay, not what you can carry.</p>
+  </div>
+</section>
+
+
+<!-- RECALLS -->
+<section>
+  <h2>Recalls &amp; known issues — 2024 RS e-tron GT</h2>
+  <div class="card">
+    <div class="warnbox" style="border-left-color:var(--good)">
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--good-text);margin-bottom:5px">Cleared — verified two independent ways</div>
+      <b>This VIN has 0 unrepaired recalls</b>, confirmed both by NHTSA's VIN-specific lookup and independently by
+      the CARFAX report. The model-wide battery recall (<b>24V-726</b>, expanding <b>24V-228</b> — 1,519 RS e-tron
+      GTs for high-voltage battery modules that can short internally) doesn't apply here as an open item. No longer
+      a negotiating point or a blocker. <span class="note">One thing this doesn't tell you: whether the VIN was
+      never in the affected population, or was affected and already repaired — that distinction doesn't change
+      your risk today, but it's genuinely unknowable from public records, same as the battery's actual capacity
+      (see the SOH item above, now folded into your price ask instead).</span>
+    </div>
+    <table>
+      <thead><tr><th>Recall</th><th>Issue</th><th>Remedy</th><th class="r">Priority</th></tr></thead>
+      <tbody>
+        <tr><td><b>24V-726 / 24V-228</b><br><span class="note">Sept 2024 / Mar 2024 · codes 931A, 931B</span></td>
+            <td>HV battery modules can short internally — fire risk</td>
+            <td>Monitoring + 80% charge cap, then module replacement</td>
+            <td class="r"><span class="pill" style="border-color:var(--critical);color:var(--critical);font-weight:600">critical</span></td></tr>
+        <tr><td><b>24V-465</b><br><span class="note">June 2024</span></td>
+            <td>Front axle brake hoses can tear — brake circuit failure</td>
+            <td>Both front hoses and holders replaced free</td>
+            <td class="r"><span class="pill" style="border-color:var(--critical);color:var(--critical);font-weight:600">critical</span></td></tr>
+        <tr><td><b>23V-842</b><br><span class="note">Dec 2023</span></td>
+            <td>240V charging cable can overheat on some home outlets</td>
+            <td>Replacement cable with temperature sensor</td>
+            <td class="r"><span class="pill">check</span></td></tr>
+        <tr><td><b>25V-900</b><br><span class="note">Dec 2025 — recent, often still open</span></td>
+            <td>Software fault can stop the rearview camera displaying</td>
+            <td>Dealer software update</td>
+            <td class="r"><span class="pill">check</span></td></tr>
+        <tr><td><b>91VT</b><br><span class="note">service campaign</span></td>
+            <td>Red charging LED, fast-charge interruptions</td>
+            <td>HV battery control module software</td>
+            <td class="r"><span class="pill">check</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size:15.5px;margin-top:22px">Not a recall, but budget for it</h3>
+    <p class="note" style="margin-bottom:8px"><b>Rear tires wear extremely fast.</b> 637 hp and roughly 5,100 lb
+    on staggered performance rubber — owners report burning through rear tires unusually quickly. A set runs
+    <b>$1,400&ndash;$2,000</b>, and alignment checks every 5,000 miles are the common advice. At 12,394 miles this
+    car may be on its original set or close to needing one.</p>
+    <p class="note" style="margin-bottom:0"><b>Inspect the tyres yourself and read the date codes.</b> If they're
+    near the wear bars, that's $1,400&ndash;$2,000 you can reasonably ask them to absorb — either as new tyres before
+    delivery or as a straight price reduction. It's a much easier "yes" for a dealer than a naked discount.</p>
+
+    <h3 style="font-size:15.5px;margin-top:22px">What to ask for, specifically</h3>
+    <ul class="note">
+      <li>Run the VIN yourself at <b>nhtsa.gov/recalls</b> — <b>WAUBHBFW6R7901593</b> — and again on Audi's owner portal. Do this before you call.</li>
+      <li>Ask for the <b>dealer service printout</b> showing completed campaign codes with dates and mileage — not a verbal "it's all done."</li>
+      <li>For the battery specifically: <b>were modules physically replaced, or only software installed?</b> Those are very different outcomes.</li>
+      <li>Is the car still limited to <b>80% state of charge</b>? (Still worth asking verbally — doesn't require ODIS.)</li>
+      <li><s>Battery state-of-health reading</s> — asked, declined. Now a price argument, not an open question.</li>
+      <li>Confirm the in-service date, which starts the <b>8 year / 100,000 mile</b> battery warranty clock (roughly 2032 here).</li>
+    </ul>
+    <p class="note" style="margin-bottom:0">There is also ongoing class-action litigation over this battery recall.
+    Not a reason to walk away, but worth knowing it exists — and it's part of why these cars have depreciated as
+    hard as they have.</p>
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<section>
+  <h2>The negotiation plan — moderate, out-the-door</h2>
+  <div class="card" style="margin-bottom:14px">
+    <table>
+      <thead><tr><th>Stage</th><th>Vehicle price</th><th class="r">Out-the-door</th><th>Why here</th></tr></thead>
+      <tbody>
+        <tr><td><b>1. Opening ask</b></td><td>$66,500</td><td class="r"><b>~$70,309</b></td>
+          <td>Grounded, not a lowball — only ~$1,200 under what they themselves charged 3 weeks ago</td></tr>
+        <tr class="hi"><td><b>2. Target / expected landing</b></td><td>$69,500</td><td class="r"><b>~$73,497</b></td>
+          <td>A real number they've already hit once (their own $69,696 low)</td></tr>
+        <tr><td><b>3. Fallback before walking</b></td><td>$70,500</td><td class="r">~$74,550</td>
+          <td>Only move here if they hold firm and you still want the car more than the principle</td></tr>
+        <tr><td><b>4. Walk-away ceiling</b></td><td>$71,000</td><td class="r">~$75,091</td>
+          <td>Above this you're paying near-market for a car with unverified battery health — stop</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card grid2">
+    <div>
+      <h3 style="font-size:15.5px">Opening — lead with the ask, back it with evidence</h3>
+      <p class="note">Everything's resolved except the OTD number itself. Open at $66,500 vehicle price and
+      immediately stack the three price facts that justify it — don't make them ask. Raise the battery check
+      separately, as a small contingency, not as part of the price pitch:</p>
+      <div class="say">"Everything's checked out — sticker confirms the options, title's clean, CARFAX and NHTSA
+      both show no open recalls. Where I land is $66,500 on the vehicle, plus tax, title and doc fees — call it
+      $70,300 out-the-door. Here's why: KBB fair purchase is $67,400, so I'm actually still under that. This exact
+      car was priced at $69,696 as recently as late July, so I know you can get there. I've looked at comparable
+      cars nationally too — Riverside has a nearly identical one, same roof and interior package, at $72,997. If
+      you can get to $70,300 out-the-door, I'll sign this week — separately, I'd also like to get a battery health
+      check done before we finalize, runs about $200–300 at an Audi dealer."</div>
+    </div>
+    <div>
+      <h3 style="font-size:15.5px">If they counter high (expect $71–72k)</h3>
+      <p class="note">Don't split the difference automatically. Move once, to your real target, and hold:</p>
+      <div class="say">"I hear you on the options — it's a nicely equipped car. But it's also been sitting since
+      March 19th, and you had it at $69,696 seven weeks in. I can do $69,500 on the vehicle — that's about $73,500
+      out-the-door — and I'll sign this week. If that doesn't work, I understand — reach out before month-end if
+      anything changes."</div>
+    </div>
+    <div>
+      <h3 style="font-size:15.5px">If they hold at $70–71k</h3>
+      <p class="note" style="margin-bottom:0">This is where the moderate plan allows one more small move — not a
+      cave, a deliberate step to $70,500 vehicle price (~$74,550 OTD) <i>only if</i> you're genuinely ready to
+      close there. Otherwise, this is where you go quiet. Silence after a number is the most underused tool here —
+      make the offer, then stop talking. Do not fill the gap by improving your own offer; that's negotiating
+      against yourself, and it's the most common way buyers lose a thousand dollars in ten seconds.</p>
+    </div>
+    <div>
+      <h3 style="font-size:15.5px">Walk-away — $71,000 vehicle price / ~$75,091 OTD</h3>
+      <p class="note" style="margin-bottom:0">$69,500 is a fine outcome, $70,500 is an acceptable one. Above
+      $71,000 you're paying near market for a car that's been listed 145 days and was itself priced at $69,696
+      three weeks ago — and Riverside's near-identical comp (same roof and interior package, 14,415 mi) is priced
+      at $72,997, which confirms this whole segment doesn't justify going any higher. Be genuinely willing to
+      leave — it's the only reason any of this works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCE ROOM -->
+<section>
+  <h2>The finance office — where the savings get taken back</h2>
+  <div class="card">
+    <div class="warnbox">
+      <b>Get pre-approved before you go.</b> Walk in with your Capital One pre-approval (8.4% APR confirmed with
+      $10k+ down) in hand. It sets a ceiling on the rate and lets the dealer compete rather than dictate. Dealers
+      routinely mark up the buy rate by one to two points — on ~$51,000 financed over 72 months, two points is
+      roughly $3,500.
+    </div>
+    <p class="note"><b>Decline in advance, politely:</b></p>
+    <ul class="note">
+      <li>Paint and fabric protection, VIN etching, nitrogen tyres, "environmental packages" — pure margin</li>
+      <li>Extended warranty on the spot. If you want EV coverage, buy it later from an Audi dealer at a
+        negotiated price; it's not a now-or-never decision no matter how it's framed</li>
+      <li>GAP insurance from the dealer — your own insurer or credit union sells it cheaper</li>
+      <li>Any "market adjustment" or reconditioning fee added after the price is agreed</li>
+    </ul>
+    <p class="note" style="margin-bottom:0"><b>Texas doesn't cap doc fees.</b> Expect $150–225. If it's materially
+    higher, ask for it to come off the vehicle price — the fee itself is usually non-negotiable but the price isn't.</p>
+  </div>
+</section>
+
+<!-- LIVE CALC -->
+<section>
+  <h2>Run any counteroffer</h2>
+  <div class="card">
+    <div class="calc">
+      <div><label>Vehicle price they offer</label><input type="number" id="cPrice" value="69500" step="100"></div>
+      <div><label>Cash down</label><input type="number" id="cCash" value="10000" step="100"></div>
+      <div><label>APR %</label><input type="number" id="cApr" value="8.4" step="0.1"></div>
+      <div><label>Term (months)</label><input type="number" id="cTerm" value="72" step="12"></div>
+    </div>
+    <div class="out" id="cOut"></div>
+    <p class="note" id="cVerdict" style="margin-top:14px;margin-bottom:0"></p>
+  </div>
+</section>
+
+<p class="note" style="text-align:center;margin-top:26px;color:var(--muted)">
+Estimates based on a $12,150 trade, Texas 6.25% with trade-in credit, and $400 title/doc.
+Not financial advice — confirm every figure on the buyer's order before signing.</p>
+
+</div>
+<script>
+const TRADE=12150,TXR=.0625,FEES=400,SAV=38917.63,OV=5418.02;
+const INS=314.71,EVC=80,MAINT=100,CAP=209475/12*.10;
+const $=i=>document.getElementById(i), n=i=>parseFloat($(i).value)||0;
+const m=v=>'$'+Math.round(v).toLocaleString('en-US');
+const m2=v=>'$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+function calc(){
+  const p=n('cPrice'),cash=n('cCash'),apr=n('cApr')/100,term=n('cTerm');
+  const r=apr/12, ann=r===0?term:(1-Math.pow(1+r,-term))/r;
+  const tax=Math.max(0,p+200-TRADE)*TXR, otd=p+FEES+tax;
+  const fin=Math.max(0,otd-TRADE-cash), pmt=fin/ann, allin=pmt+INS+EVC+MAINT;
+  const ef=(SAV-cash)/OV, interest=pmt*term-fin;
+  $('cOut').innerHTML=[
+    ['Sales tax',m(tax)],['Out-the-door',m(otd)],['Financed',m(fin)],
+    ['Loan payment',m2(pmt)],['All-in monthly',m2(allin)],['Total interest',m(interest)],
+    ['Savings left',m(SAV-cash)],['Emergency fund',ef.toFixed(1)+' mo']
+  ].map(([k,v])=>`<div><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+  const ok=allin<=CAP, off=73224-p;
+  $('cVerdict').innerHTML=
+    `${ok?'<b style="color:var(--good-text)">✓ Clears your 20/4/10 ceiling</b>':'<b style="color:var(--critical)">✕ Over your 20/4/10 ceiling</b>'}
+     of ${m2(CAP)}/mo. ${off>0?`That's <b>${m(off)}</b> off asking — ${m(off*1.0625)} less out-the-door once tax follows it down.`:''}
+     ${p>71000?' <b>Above $71,000 you\'re paying near market on a 145-day-old listing that was itself priced at $69,696 in July — Riverside has a near-identical car at $72,997, confirming this is a fair ceiling, not a floor.</b>':''}
+     ${ef<3?' <b style="color:var(--critical)">This cash down drops your emergency fund below 3 months.</b>':''}`;
+}
+['cPrice','cCash','cApr','cTerm'].forEach(i=>$(i).addEventListener('input',calc));
+$('theme').addEventListener('click',()=>{const d=document.documentElement.getAttribute('data-theme')==='dark';
+ document.documentElement.setAttribute('data-theme',d?'light':'dark');$('theme').textContent=d?'Dark':'Light';});
+calc();
+</script>
+</body>
+</html>
