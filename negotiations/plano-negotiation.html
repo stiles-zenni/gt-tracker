@@ -78,6 +78,80 @@ ul{margin:0 0 10px;padding-left:19px}li{margin-bottom:5px}
 </div>
 
 <!-- STOP -->
+ <!-- SCRIPT -->
+<section>
+  <h2>The negotiation plan — moderate, out-the-door</h2>
+  <div class="card" style="margin-bottom:14px">
+    <table>
+      <thead><tr><th>Stage</th><th>Vehicle price</th><th class="r">Out-the-door</th><th>Why here</th></tr></thead>
+      <tbody>
+        <tr><td><b>1. Opening ask</b></td><td>$66,500</td><td class="r"><b>~$70,309</b></td>
+          <td>Grounded, not a lowball — only ~$1,200 under what they themselves charged 3 weeks ago</td></tr>
+        <tr class="hi"><td><b>2. Target / expected landing</b></td><td>$69,500</td><td class="r"><b>~$73,497</b></td>
+          <td>A real number they've already hit once (their own $69,696 low)</td></tr>
+        <tr><td><b>3. Fallback before walking</b></td><td>$70,500</td><td class="r">~$74,550</td>
+          <td>Only move here if they hold firm and you still want the car more than the principle</td></tr>
+        <tr><td><b>4. Walk-away ceiling</b></td><td>$71,000</td><td class="r">~$75,091</td>
+          <td>Above this you're paying near-market for a car with unverified battery health — stop</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card grid2">
+    <div>
+      <h3 style="font-size:15.5px">Opening — lead with the ask, back it with evidence</h3>
+      <p class="note">Everything's resolved except the OTD number itself. Open at $66,500 vehicle price and
+      immediately stack the three price facts that justify it — don't make them ask. Raise the battery check
+      separately, as a small contingency, not as part of the price pitch:</p>
+      <div class="say">"Everything's checked out — sticker confirms the options, title's clean, CARFAX and NHTSA
+      both show no open recalls. Where I land is $66,500 on the vehicle, plus tax, title and doc fees — call it
+      $70,300 out-the-door. Here's why: KBB fair purchase is $67,400, so I'm actually still under that. This exact
+      car was priced at $69,696 as recently as late July, so I know you can get there. I've looked at comparable
+      cars nationally too — Riverside has a nearly identical one, same roof and interior package, at $72,997. If
+      you can get to $70,300 out-the-door, I'll sign this week — separately, I'd also like to get a battery health
+      check done before we finalize, runs about $200–300 at an Audi dealer."</div>
+    </div>
+    <div>
+      <h3 style="font-size:15.5px">If they counter high (expect $71–72k)</h3>
+      <p class="note">Don't split the difference automatically. Move once, to your real target, and hold:</p>
+      <div class="say">"I hear you on the options — it's a nicely equipped car. But it's also been sitting since
+      March 19th, and you had it at $69,696 seven weeks in. I can do $69,500 on the vehicle — that's about $73,500
+      out-the-door — and I'll sign this week. If that doesn't work, I understand — reach out before month-end if
+      anything changes."</div>
+    </div>
+    <div>
+      <h3 style="font-size:15.5px">If they hold at $70–71k</h3>
+      <p class="note" style="margin-bottom:0">This is where the moderate plan allows one more small move — not a
+      cave, a deliberate step to $70,500 vehicle price (~$74,550 OTD) <i>only if</i> you're genuinely ready to
+      close there. Otherwise, this is where you go quiet. Silence after a number is the most underused tool here —
+      make the offer, then stop talking. Do not fill the gap by improving your own offer; that's negotiating
+      against yourself, and it's the most common way buyers lose a thousand dollars in ten seconds.</p>
+    </div>
+    <div>
+      <h3 style="font-size:15.5px">Walk-away — $71,000 vehicle price / ~$75,091 OTD</h3>
+      <p class="note" style="margin-bottom:0">$69,500 is a fine outcome, $70,500 is an acceptable one. Above
+      $71,000 you're paying near market for a car that's been listed 145 days and was itself priced at $69,696
+      three weeks ago — and Riverside's near-identical comp (same roof and interior package, 14,415 mi) is priced
+      at $72,997, which confirms this whole segment doesn't justify going any higher. Be genuinely willing to
+      leave — it's the only reason any of this works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE CALC -->
+<section>
+  <h2>Run any counteroffer</h2>
+  <div class="card">
+    <div class="calc">
+      <div><label>Vehicle price they offer</label><input type="number" id="cPrice" value="69500" step="100"></div>
+      <div><label>Cash down</label><input type="number" id="cCash" value="10000" step="100"></div>
+      <div><label>APR %</label><input type="number" id="cApr" value="8.4" step="0.1"></div>
+      <div><label>Term (months)</label><input type="number" id="cTerm" value="72" step="12"></div>
+    </div>
+    <div class="out" id="cOut"></div>
+    <p class="note" id="cVerdict" style="margin-top:14px;margin-bottom:0"></p>
+  </div>
+</section>
+
 <section>
   <div class="card" style="border-left:5px solid var(--good);padding:18px 22px">
     <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--good-text);margin-bottom:7px">Window sticker received — all three requirements confirmed</div>
@@ -310,64 +384,7 @@ ul{margin:0 0 10px;padding-left:19px}li{margin-bottom:5px}
   </div>
 </section>
 
-<!-- SCRIPT -->
-<section>
-  <h2>The negotiation plan — moderate, out-the-door</h2>
-  <div class="card" style="margin-bottom:14px">
-    <table>
-      <thead><tr><th>Stage</th><th>Vehicle price</th><th class="r">Out-the-door</th><th>Why here</th></tr></thead>
-      <tbody>
-        <tr><td><b>1. Opening ask</b></td><td>$66,500</td><td class="r"><b>~$70,309</b></td>
-          <td>Grounded, not a lowball — only ~$1,200 under what they themselves charged 3 weeks ago</td></tr>
-        <tr class="hi"><td><b>2. Target / expected landing</b></td><td>$69,500</td><td class="r"><b>~$73,497</b></td>
-          <td>A real number they've already hit once (their own $69,696 low)</td></tr>
-        <tr><td><b>3. Fallback before walking</b></td><td>$70,500</td><td class="r">~$74,550</td>
-          <td>Only move here if they hold firm and you still want the car more than the principle</td></tr>
-        <tr><td><b>4. Walk-away ceiling</b></td><td>$71,000</td><td class="r">~$75,091</td>
-          <td>Above this you're paying near-market for a car with unverified battery health — stop</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="card grid2">
-    <div>
-      <h3 style="font-size:15.5px">Opening — lead with the ask, back it with evidence</h3>
-      <p class="note">Everything's resolved except the OTD number itself. Open at $66,500 vehicle price and
-      immediately stack the three price facts that justify it — don't make them ask. Raise the battery check
-      separately, as a small contingency, not as part of the price pitch:</p>
-      <div class="say">"Everything's checked out — sticker confirms the options, title's clean, CARFAX and NHTSA
-      both show no open recalls. Where I land is $66,500 on the vehicle, plus tax, title and doc fees — call it
-      $70,300 out-the-door. Here's why: KBB fair purchase is $67,400, so I'm actually still under that. This exact
-      car was priced at $69,696 as recently as late July, so I know you can get there. I've looked at comparable
-      cars nationally too — Riverside has a nearly identical one, same roof and interior package, at $72,997. If
-      you can get to $70,300 out-the-door, I'll sign this week — separately, I'd also like to get a battery health
-      check done before we finalize, runs about $200–300 at an Audi dealer."</div>
-    </div>
-    <div>
-      <h3 style="font-size:15.5px">If they counter high (expect $71–72k)</h3>
-      <p class="note">Don't split the difference automatically. Move once, to your real target, and hold:</p>
-      <div class="say">"I hear you on the options — it's a nicely equipped car. But it's also been sitting since
-      March 19th, and you had it at $69,696 seven weeks in. I can do $69,500 on the vehicle — that's about $73,500
-      out-the-door — and I'll sign this week. If that doesn't work, I understand — reach out before month-end if
-      anything changes."</div>
-    </div>
-    <div>
-      <h3 style="font-size:15.5px">If they hold at $70–71k</h3>
-      <p class="note" style="margin-bottom:0">This is where the moderate plan allows one more small move — not a
-      cave, a deliberate step to $70,500 vehicle price (~$74,550 OTD) <i>only if</i> you're genuinely ready to
-      close there. Otherwise, this is where you go quiet. Silence after a number is the most underused tool here —
-      make the offer, then stop talking. Do not fill the gap by improving your own offer; that's negotiating
-      against yourself, and it's the most common way buyers lose a thousand dollars in ten seconds.</p>
-    </div>
-    <div>
-      <h3 style="font-size:15.5px">Walk-away — $71,000 vehicle price / ~$75,091 OTD</h3>
-      <p class="note" style="margin-bottom:0">$69,500 is a fine outcome, $70,500 is an acceptable one. Above
-      $71,000 you're paying near market for a car that's been listed 145 days and was itself priced at $69,696
-      three weeks ago — and Riverside's near-identical comp (same roof and interior package, 14,415 mi) is priced
-      at $72,997, which confirms this whole segment doesn't justify going any higher. Be genuinely willing to
-      leave — it's the only reason any of this works.</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- FINANCE ROOM -->
 <section>
@@ -392,20 +409,7 @@ ul{margin:0 0 10px;padding-left:19px}li{margin-bottom:5px}
   </div>
 </section>
 
-<!-- LIVE CALC -->
-<section>
-  <h2>Run any counteroffer</h2>
-  <div class="card">
-    <div class="calc">
-      <div><label>Vehicle price they offer</label><input type="number" id="cPrice" value="69500" step="100"></div>
-      <div><label>Cash down</label><input type="number" id="cCash" value="10000" step="100"></div>
-      <div><label>APR %</label><input type="number" id="cApr" value="8.4" step="0.1"></div>
-      <div><label>Term (months)</label><input type="number" id="cTerm" value="72" step="12"></div>
-    </div>
-    <div class="out" id="cOut"></div>
-    <p class="note" id="cVerdict" style="margin-top:14px;margin-bottom:0"></p>
-  </div>
-</section>
+
 
 <p class="note" style="text-align:center;margin-top:26px;color:var(--muted)">
 Estimates based on a $12,150 trade, Texas 6.25% with trade-in credit, and $400 title/doc.
