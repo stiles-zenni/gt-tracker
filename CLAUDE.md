@@ -1,6 +1,6 @@
 # RS e-tron GT Tracker
 
-A single-file static site (`index.html`) tracking Stiles's search for a used 2024 Audi RS e-tron GT. Deployed to Netlify (site: `rs-etron-gt-tracker`, live at rs-etron-gt-tracker.netlify.app) via Netlify's Git integration — any push to `main` auto-deploys, no build step, no CI config needed.
+A single-file static site (`index.html`) tracking Stiles's search for a used Audi RS e-tron GT — both 2024 and 2023 model years, in separate tabs on the page (see "Model years" below). Deployed to Netlify (site: `rs-etron-gt-tracker`, live at rs-etron-gt-tracker.netlify.app) via Netlify's Git integration — any push to `main` auto-deploys, no build step, no CI config needed.
 
 The site is shared with dealership salespeople as a persistent link, so it should look clean and load fast on a phone. It was rebuilt mobile-first in August 2026 (card layout, collapsible criteria/excluded sections, sticky compact header) — preserve that pattern when editing; don't regress to a wide desktop table.
 
@@ -10,7 +10,7 @@ Daily automated search + a public tracker page, previously run inside Anthropic'
 
 ## Target vehicle & hard requirements (non-negotiable)
 
-2024 Audi RS e-tron GT (used).
+Audi RS e-tron GT (used), 2024 model year primary, 2023 also tracked (see "Model years" below).
 
 1. **Interior color tier — determines which tracker section a listing goes in, not a pass/fail gate:**
    - **Perfect Fit**: black interior.
@@ -18,7 +18,9 @@ Daily automated search + a public tracker page, previously run inside Anthropic'
    - Arras Red interior remains excluded outright (not part of this tiering — see Explicitly excluded below).
    - Any other interior color not covered above: flag for a call rather than silently excluding or silently tracking, same as always.
 2. **Ventilated/cooled front seats — confirmed via spec/equipment text, not assumed.** Ventilation only comes with the optional Full Leather Interior Package (~$4,500 new) — confirmed across multiple real window stickers plus a general web search, no known exception or standalone alternate path to ventilation. **Confirming the package itself is sufficient on its own — you don't need the word "ventilated" to appear anywhere.** Look for any of: the package named directly ("Full Leather Interior Package," "Full Leather Interior"), Visor's option code `9EF`, or its bundled seat name "Front Sport Seats Pro" / "RS Sport Seats Plus." A listing showing only "Heated Seats" with none of the above does NOT qualify — some northern-climate dealers write "heated" loosely/generically even when the car has the fuller package, so absence of the word "ventilated" in prose is not itself disqualifying either; check for the package, not the word.
-3. **Clean title — no Manufacturer Buyback/Lemon brand.** Non-negotiable regardless of price/condition. If a CARFAX or similar report shows a confirmed Buyback/Lemon brand, exclude outright. If contested/unconfirmed, keep tracked but flagged, don't exclude. A "good value" badge on a dealer/CARFAX page is about pricing, not title brand — not evidence of a clean title.
+3. **Clean title strongly preferred — buyback/lemon-branded cars are no longer an auto-exclude; tracked separately below (see Buyback tier) since the discount carries through to resale.** Reasoning: a car-buying concierge advised Stiles that lemon-law buybacks are often minor issues (the trigger is failed repair attempts, not necessarily severity), and the resale discount roughly mirrors the purchase discount, so buying at a discount and reselling at a similar discount isn't inherently a worse deal financially. Real caveats to flag alongside any buyback, not reasons to exclude it: (a) the buyer pool shrinks permanently — no CPO eligibility ever, harder financing/insurance — so the discount needed to resell later could end up steeper than the one received at purchase, not a clean wash; (b) likely longer time-to-sell; (c) if the underlying defect ever recurs, it's an active problem, not just a discounted clean car; (d) this is an EV, so if the defect is ever battery/HV-system-related, that's materially more serious than a typical gas-car lemon trigger (infotainment glitch, persistent rattle) — always worth a call to ask what the actual defect was.
+   - **A confirmed Buyback/Lemon brand does NOT exempt a listing from any other hard requirement.** It still gets hard-excluded if it independently fails interior color tier, ventilation, roof, or structural — buyback status only grants its own tier, not a pass on anything else.
+   - If contested/unconfirmed, keep tracked but flagged, don't exclude or tier as Buyback yet. A "good value" badge on a dealer/CARFAX page is about pricing, not title brand — not evidence of a clean title either way.
 4. **Panoramic glass roof — confirmed, not assumed.** The RS trim has a no-cost factory choice between glass roof and carbon-fiber roof.
    - **Window sticker photos are the most authoritative source and are usually easy to find** — dealers commonly post the sticker as one of the first few gallery photos (often #2, right after the main exterior shot), not buried deep. Check the first 5–10 gallery photos for one before falling back to equipment text alone.
    - **On the sticker, roof status is its own distinct line item** under Packages/Options — look specifically for "Panoramic Fixed Glass Roof: Included" (or similar). Read that line directly; don't infer roof status from a package *name* alone. Correction from an earlier version of this file: a **"Carbon Performance Package" name does NOT by itself mean carbon roof** — on at least one confirmed sticker, that package was carbon-fiber door sills/trim only, with the glass roof confirmed separately on its own line in the same package column. Always find the explicit roof line before concluding carbon.
@@ -27,6 +29,16 @@ Daily automated search + a public tracker page, previously run inside Anthropic'
    - Only treat it as carbon and exclude once you've found an explicit carbon-roof line (e.g. "Carbon Fiber Roof: Included") or a photo showing an opaque headliner with no glass panel anywhere. If truly nothing roof-related is found after checking the sticker and photos, mark "Needs verification," don't assume glass.
    - Note: this roof has no retractable shade (factory or otherwise) — heat-reflective glass only, already communicated to Stiles, no need to re-raise it.
 5. **No significant structural/frame damage — confirmed via the actual pulled CARFAX/AutoCheck report, not a dealer-page snapshot badge.** Snapshot/summary "Structural Damage Reported" badges are known to sometimes trigger on minor items (a bumper/fascia repair, a post-repair sensor recalibration) that aren't real frame/unibody damage — treat a badge alone as "needs verification," not confirmed. Only exclude once the full report is actually read and confirms genuine structural/frame damage. Mirrors how title-brand claims are handled below.
+
+## Model years — 2024 and 2023, separate tabs
+
+The site tracks both 2024 (primary) and 2023 model years, in two separate tabs in `index.html` (`.tab-nav` / `.tab-panel#tab-2024` / `.tab-panel#tab-2023`) — each with its own Perfect Fit / Alternates / Buyback / Excluded sections and its own counts. Don't merge them into one list.
+
+**2024-standard equipment that is NOT standard on a 2023** (confirmed via actual Monroney window stickers): Power Steering Plus, HD Matrix-design LED headlights w/ Audi laser high-beam, illuminated door sill inlays, Dinamica microsuede headliner, LED interior ambient lighting. On a 2023, hard requirement #2's ventilation plus this equipment gap is closed by checking for **both** factory option packages:
+- `9EC` "Carbon Performance Package" — brings Power Steering Plus, laser headlights, illuminated sills on a 2023 (these are otherwise 2024-standard-only).
+- `9EF` "Full Leather Interior Package" — brings ventilation + Dinamica headliner, same as on a 2024.
+
+A 2023 with both packages is functionally equivalent to a 2024 for every hard requirement except LED interior ambient lighting, which is impossible to option into any 2023 — a permanent, unavoidable gap, not a flag to keep chasing. Roof status (glass vs. carbon, requirement #4) is independent of both packages and must still be separately confirmed on any 2023 exactly as on a 2024.
 
 ## Preferences (flexible, priority order)
 
@@ -38,7 +50,7 @@ Daily automated search + a public tracker page, previously run inside Anthropic'
 
 - Arras Red interior.
 - Heated-only seats, no ventilation confirmation.
-- Confirmed Manufacturer Buyback/Lemon branded title.
+- **2023 tab only**: Santos Brown interior — Stiles has decided against brown specifically for 2023 finds ("I don't like the brown"), so restrict 2023 tracking to gray/black interiors only. This does NOT apply to the 2024 tab, where Santos Brown remains a valid Alternates-tier color per requirement #1.
 - Confirmed carbon-fiber roof instead of panoramic glass.
 - Confirmed significant structural/frame damage (from the actual report, not a snapshot badge).
 - Sold/delisted vehicles.
@@ -53,7 +65,7 @@ Keep card text terse — single words/short phrases ("Confirmed," "Needs verific
 
 Every tracked card's `spec-row` must show the VIN, no exceptions — the salesperson needs it to look up the specific car. Don't drop it for space; it's the one field that can't be terse-out.
 
-Tracked listings are split into two `.listings` blocks under separate `.section-label`s: **Perfect Fit** (black interior) and **Alternates** (Monaco Gray / Santos Brown interior), each with its own `(N)` count in the label — see requirement #1. A given car only ever belongs in one of the two; move it between sections if new info changes its interior-color read. Keep both sections' counts and the header's overall "N tracked" total in sync when adding/removing a card.
+Within each tab, tracked listings are split into three `.listings` blocks under separate `.section-label`s: **Perfect Fit** (black interior, clean title), **Alternates** (Monaco Gray / Santos Brown interior, clean title — Santos Brown 2024-tab only, see Explicitly excluded), and **Buyback / Lemon Titles — Worth a Call** (confirmed Buyback/Lemon brand, otherwise passes every hard requirement; tag it `⚠ Buyback/Lemon — call for details`), each with its own `(N)` count in the label — see requirements #1 and #3. A given car only ever belongs in one of the three; move it between sections if new info changes its interior-color or title read. Keep all three sections' counts and both the tab's own total and the header's overall total in sync when adding/removing a card. Cards support `data-price`/`data-miles` attributes feeding the page's price/mileage sort — set both on every card added or edited.
 
 ## Data-quality lessons learned (apply these)
 
