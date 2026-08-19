@@ -149,6 +149,27 @@
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
+  /* Sort control */
+  .sort-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-size: 12.5px;
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+  .sort-row select {
+    background: var(--surface);
+    color: var(--fg);
+    border: 1px solid var(--hairline);
+    border-radius: 0;
+    padding: 6px 8px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+  }
+  .sort-row select:focus { outline: none; border-color: rgba(255,255,255,0.4); }
+
   /* Section labels */
   .section-label {
     font-size: 12px;
@@ -537,6 +558,15 @@
     <button class="tab-btn" type="button" data-tab="2023">2023 (14)</button>
   </div>
 
+  <div class="sort-row">
+    <label for="sortSelect">Sort within each tier:</label>
+    <select id="sortSelect">
+      <option value="default">Default</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="miles-asc">Mileage: Low to High</option>
+    </select>
+  </div>
+
   <div class="tab-panel active" id="tab-2024">
 
   <details class="criteria">
@@ -571,7 +601,7 @@
   <div class="section-label">Perfect Fit (3)</div>
   <div class="listings">
 
-    <div class="card" data-id="audi-grapevine-tangored" data-vin="WAUBHBFW5R7900435">
+    <div class="card" data-id="audi-grapevine-tangored" data-vin="WAUBHBFW5R7900435" data-price="75225" data-miles="14549">
       <img class="card-thumb" src="images/audi-grapevine-tangored.jpg" alt="2024 Audi RS e-tron GT at Audi Grapevine, Grapevine TX">
       <div class="card-top">
         <div>
@@ -599,7 +629,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="select-auto-imports-alexandria" data-vin="WAUBHBFW0R7900603">
+    <div class="card" data-id="select-auto-imports-alexandria" data-vin="WAUBHBFW0R7900603" data-price="75994" data-miles="10570">
       <img class="card-thumb" src="images/select-auto-imports-alexandria.jpg" alt="2024 Audi RS e-tron GT at Select Auto Imports, Alexandria VA">
       <div class="card-top">
         <div>
@@ -627,7 +657,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="guaranteed-motor-cars-lakevilla-ibiswhite" data-vin="WAUBHBFW6R7900766">
+    <div class="card" data-id="guaranteed-motor-cars-lakevilla-ibiswhite" data-vin="WAUBHBFW6R7900766" data-price="74878" data-miles="9513">
       <img class="card-thumb" src="images/guaranteed-motor-cars-lakevilla-ibiswhite.jpg" alt="2024 Audi RS e-tron GT, Ibis White, Guaranteed Motor Cars Lake Villa">
       <div class="card-top">
         <div>
@@ -660,7 +690,7 @@
   <div class="section-label">Alternates (2)</div>
   <div class="listings">
 
-    <div class="card" data-id="audi-livermore-monacogray" data-vin="WAUBHBFW3R7901809">
+    <div class="card" data-id="audi-livermore-monacogray" data-vin="WAUBHBFW3R7901809" data-price="71164" data-miles="31046">
       <div class="card-top">
         <div>
           <div class="dealer-link"><a href="https://www.livermoreaudi.com/en/inventory/vehicle/?isdealer&amp;market=usuc&amp;vehicleId=WAUBHBFW3R7901809" target="_blank" rel="noopener">Audi Livermore</a><button class="edit-btn" data-id="audi-livermore-monacogray" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="audi-livermore-monacogray" aria-label="Exclude listing">✕</button></div>
@@ -687,7 +717,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="audi-tysons-corner-vienna" data-vin="WAUBHBFW5R7901732">
+    <div class="card" data-id="audi-tysons-corner-vienna" data-vin="WAUBHBFW5R7901732" data-price="71890" data-miles="30331">
       <div class="card-top">
         <div>
           <div class="dealer-link"><a href="https://www.auditysonscornerva.com/en/inventory/vehicle/?isdealer&amp;market=usuc&amp;vehicleId=WAUBHBFW5R7901732" target="_blank" rel="noopener">Audi Tysons Corner</a><button class="edit-btn" data-id="audi-tysons-corner-vienna" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="audi-tysons-corner-vienna" aria-label="Exclude listing">✕</button></div>
@@ -721,7 +751,7 @@
   <p class="section-note">Manufacturer buyback/lemon-branded cars, tracked here instead of hard-excluded.</p>
   <div class="listings">
 
-    <div class="card" data-id="lincoln-bloomington-mythosblack" data-vin="WAUBHBFW9R7901698">
+    <div class="card" data-id="lincoln-bloomington-mythosblack" data-vin="WAUBHBFW9R7901698" data-price="68338" data-miles="8966">
       <div class="card-top">
         <div>
           <div class="dealer-link">Lincoln of Bloomington<button class="edit-btn" data-id="lincoln-bloomington-mythosblack" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="lincoln-bloomington-mythosblack" aria-label="Exclude listing">✕</button></div>
@@ -744,7 +774,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="driven-auto-burbank-santosbrown" data-vin="WAUBHBFWXR7900589">
+    <div class="card" data-id="driven-auto-burbank-santosbrown" data-vin="WAUBHBFWXR7900589" data-price="67357" data-miles="20413">
       <div class="card-top">
         <div>
           <div class="dealer-link">Driven Auto Sales<button class="edit-btn" data-id="driven-auto-burbank-santosbrown" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="driven-auto-burbank-santosbrown" aria-label="Exclude listing">✕</button></div>
@@ -766,7 +796,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="driven-auto-waukegan-mythosblack" data-vin="WAUBHBFW9R7901510">
+    <div class="card" data-id="driven-auto-waukegan-mythosblack" data-vin="WAUBHBFW9R7901510" data-price="63500" data-miles="23011">
       <div class="card-top">
         <div>
           <div class="dealer-link">Driven Auto<button class="edit-btn" data-id="driven-auto-waukegan-mythosblack" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="driven-auto-waukegan-mythosblack" aria-label="Exclude listing">✕</button></div>
@@ -789,7 +819,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="van-horn-sheboygan-daytonagray" data-vin="WAUBHBFW9R7901667">
+    <div class="card" data-id="van-horn-sheboygan-daytonagray" data-vin="WAUBHBFW9R7901667" data-price="68486" data-miles="4167">
       <div class="card-top">
         <div>
           <div class="dealer-link">Van Horn<button class="edit-btn" data-id="van-horn-sheboygan-daytonagray" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="van-horn-sheboygan-daytonagray" aria-label="Exclude listing">✕</button></div>
@@ -812,7 +842,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="bill-luke-gilbert-kemoragray" data-vin="WAUBHBFW9R7901121">
+    <div class="card" data-id="bill-luke-gilbert-kemoragray" data-vin="WAUBHBFW9R7901121" data-price="69074" data-miles="5375">
       <div class="card-top">
         <div>
           <div class="dealer-link">Bill Luke Audi<button class="edit-btn" data-id="bill-luke-gilbert-kemoragray" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="bill-luke-gilbert-kemoragray" aria-label="Exclude listing">✕</button></div>
@@ -894,7 +924,7 @@
   <div class="section-label">Perfect Fit (9)</div>
   <div class="listings">
 
-    <div class="card" data-id="audi-northshore-2023" data-vin="WAUBHBFW6P7903308">
+    <div class="card" data-id="audi-northshore-2023" data-vin="WAUBHBFW6P7903308" data-price="72498" data-miles="10549">
       <img class="card-thumb" src="images/audi-northshore-2023.jpg" alt="2023 Audi RS e-tron GT at Audi North Shore, Brown Deer WI">
       <div class="card-top">
         <div>
@@ -923,7 +953,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="northbay-ct-1-2023" data-vin="WAUBHBFW1P7900736">
+    <div class="card" data-id="northbay-ct-1-2023" data-vin="WAUBHBFW1P7900736" data-price="62995" data-miles="23607">
       <img class="card-thumb" src="images/northbay-ct-1-2023.jpg" alt="2023 Audi RS e-tron GT at North Bay Imports, East Windsor CT">
       <div class="card-top">
         <div>
@@ -951,7 +981,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="audi-englewood-2023" data-vin="WAUBHBFW2P7901507">
+    <div class="card" data-id="audi-englewood-2023" data-vin="WAUBHBFW2P7901507" data-price="69586" data-miles="20728">
       <img class="card-thumb" src="images/audi-englewood-2023.jpg" alt="2023 Audi RS e-tron GT at Audi Englewood, NJ">
       <div class="card-top">
         <div>
@@ -979,7 +1009,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="auditysons-va-2-2023" data-vin="WAUBHBFW1P7900705">
+    <div class="card" data-id="auditysons-va-2-2023" data-vin="WAUBHBFW1P7900705" data-price="69540" data-miles="9071">
       <img class="card-thumb" src="images/auditysons-va-2-2023.jpg" alt="2023 Audi RS e-tron GT at Audi Tysons Corner, Vienna VA">
       <div class="card-top">
         <div>
@@ -1008,7 +1038,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="audi-atlanta-2-2023" data-vin="WAUBHBFW9P7901651">
+    <div class="card" data-id="audi-atlanta-2-2023" data-vin="WAUBHBFW9P7901651" data-price="65794" data-miles="19251">
       <img class="card-thumb" src="images/audi-atlanta-2-2023.jpg" alt="2023 Audi RS e-tron GT at Audi Atlanta, GA">
       <div class="card-top">
         <div>
@@ -1038,7 +1068,7 @@
     </div>
 
 
-    <div class="card" data-id="northbay-ct-3-2023" data-vin="WAUBHBFW6P7900814">
+    <div class="card" data-id="northbay-ct-3-2023" data-vin="WAUBHBFW6P7900814" data-price="58660" data-miles="20028">
       <img class="card-thumb" src="images/northbay-ct-3-2023.jpg" alt="2023 Audi RS e-tron GT at North Bay Imports, East Windsor CT">
       <div class="card-top">
         <div>
@@ -1066,7 +1096,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="fairfield-subaru-2023" data-vin="WAUBHBFW4P7900746">
+    <div class="card" data-id="fairfield-subaru-2023" data-vin="WAUBHBFW4P7900746" data-price="69588" data-miles="6890">
       <div class="card-top">
         <div>
           <div class="dealer-link"><a href="https://www.fairfieldsubaru.com/viewdetails/used/WAUBHBFW4P7900746" target="_blank" rel="noopener">Fairfield Subaru</a><button class="edit-btn" data-id="fairfield-subaru-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="fairfield-subaru-2023" aria-label="Exclude listing">✕</button></div>
@@ -1093,7 +1123,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="vanhorn-sheboygan-2-2023" data-vin="WAUBHBFW6P7902059">
+    <div class="card" data-id="vanhorn-sheboygan-2-2023" data-vin="WAUBHBFW6P7902059" data-price="63195" data-miles="14412">
       <img class="card-thumb" src="images/vanhorn-sheboygan-2-2023.png" alt="2023 Audi RS e-tron GT at Van Horn Volkswagen of Sheboygan, WI">
       <div class="card-top">
         <div>
@@ -1122,7 +1152,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="genesis-highlandpark-2023" data-vin="WAUBHBFW1P7903720">
+    <div class="card" data-id="genesis-highlandpark-2023" data-vin="WAUBHBFW1P7903720" data-price="59868" data-miles="13175">
       <img class="card-thumb" src="images/genesis-highlandpark-2023.jpeg" alt="2023 Audi RS e-tron GT at Genesis of Highland Park, IL">
       <div class="card-top">
         <div>
@@ -1155,7 +1185,7 @@
   <div class="section-label">Alternates (2)</div>
   <div class="listings">
 
-    <div class="card" data-id="ourisman-frederick-2023" data-vin="WAUBHBFW3P7903007">
+    <div class="card" data-id="ourisman-frederick-2023" data-vin="WAUBHBFW3P7903007" data-price="67742" data-miles="21928">
       <img class="card-thumb" src="images/ourisman-frederick-2023.jpg" alt="2023 Audi RS e-tron GT at Ourisman Audi Volvo, Frederick MD">
       <div class="card-top">
         <div>
@@ -1183,7 +1213,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="auditysons-va-1-2023" data-vin="WAUBHBFW3P7902438">
+    <div class="card" data-id="auditysons-va-1-2023" data-vin="WAUBHBFW3P7902438" data-price="70994" data-miles="21215">
       <img class="card-thumb" src="images/auditysons-va-1-2023.jpg" alt="2023 Audi RS e-tron GT at Audi Tysons Corner, Vienna VA">
       <div class="card-top">
         <div>
@@ -1219,7 +1249,7 @@
   <p class="section-note">Same policy as the 2024 tier — tracked, not hard-excluded, but call for the specific defect before deciding.</p>
   <div class="listings">
 
-    <div class="card" data-id="idrive-berwyn-2023" data-vin="WAUBHBFW2P7903063">
+    <div class="card" data-id="idrive-berwyn-2023" data-vin="WAUBHBFW2P7903063" data-price="60065" data-miles="14366">
       <div class="card-top">
         <div>
           <div class="dealer-link"><a href="https://www.idrivechicago.com/viewdetails/used/WAUBHBFW2P7903063" target="_blank" rel="noopener">iDrive Motor Sports</a><button class="edit-btn" data-id="idrive-berwyn-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="idrive-berwyn-2023" aria-label="Exclude listing">✕</button></div>
@@ -1247,7 +1277,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="northbay-ct-2-2023" data-vin="WAUBHBFW0P7900727">
+    <div class="card" data-id="northbay-ct-2-2023" data-vin="WAUBHBFW0P7900727" data-price="63811" data-miles="5133">
       <img class="card-thumb" src="images/northbay-ct-2-2023.jpg" alt="2023 Audi RS e-tron GT at North Bay Imports, East Windsor CT">
       <div class="card-top">
         <div>
@@ -1276,7 +1306,7 @@
       </details>
     </div>
 
-    <div class="card" data-id="vanhorn-sheboygan-1-2023" data-vin="WAUBHBFW5P7903381">
+    <div class="card" data-id="vanhorn-sheboygan-1-2023" data-vin="WAUBHBFW5P7903381" data-price="65165" data-miles="2379">
       <img class="card-thumb" src="images/vanhorn-sheboygan-1-2023.png" alt="2023 Audi RS e-tron GT at Van Horn Volkswagen of Sheboygan, WI">
       <div class="card-top">
         <div>
@@ -1502,6 +1532,38 @@
       btn.classList.add('active');
       document.getElementById('tab-' + btn.getAttribute('data-tab')).classList.add('active');
     });
+  });
+})();
+
+(function() {
+  var sortSelect = document.getElementById('sortSelect');
+  if (!sortSelect) return;
+  var containers = Array.prototype.slice.call(document.querySelectorAll('.listings'));
+  var originalOrders = containers.map(function(c) {
+    return Array.prototype.slice.call(c.children);
+  });
+
+  function applySort(mode) {
+    containers.forEach(function(container, i) {
+      if (mode === 'default') {
+        originalOrders[i].forEach(function(el) { container.appendChild(el); });
+        return;
+      }
+      var key = mode === 'price-asc' ? 'data-price' : 'data-miles';
+      var cards = Array.prototype.slice.call(container.children);
+      cards.sort(function(a, b) {
+        var av = parseInt(a.getAttribute(key), 10);
+        var bv = parseInt(b.getAttribute(key), 10);
+        if (isNaN(av)) av = Infinity;
+        if (isNaN(bv)) bv = Infinity;
+        return av - bv;
+      });
+      cards.forEach(function(el) { container.appendChild(el); });
+    });
+  }
+
+  sortSelect.addEventListener('change', function() {
+    applySort(sortSelect.value);
   });
 })();
 </script>
