@@ -123,6 +123,32 @@
   .criteria-body li { margin-bottom: 3px; }
   .criteria-body p { margin: 0; font-size: 13.5px; }
 
+  /* Year tabs */
+  .tab-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  .tab-btn.active {
+    color: var(--fg);
+    border-color: rgba(255,255,255,0.35);
+    background: var(--surface-2);
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
   /* Section labels */
   .section-label {
     font-size: 12px;
@@ -506,6 +532,13 @@
 
 <main>
 
+  <div class="tab-nav">
+    <button class="tab-btn active" type="button" data-tab="2024">2024 (10)</button>
+    <button class="tab-btn" type="button" data-tab="2023">2023 (11)</button>
+  </div>
+
+  <div class="tab-panel active" id="tab-2024">
+
   <details class="criteria">
     <summary>Search criteria &amp; budget</summary>
     <div class="criteria-body">
@@ -833,6 +866,378 @@
     </div>
   </details>
 
+  </div>
+
+  <div class="tab-panel" id="tab-2023">
+
+  <details class="criteria">
+    <summary>2023 search criteria</summary>
+    <div class="criteria-body">
+      <div class="criteria-group">
+        <div class="criteria-label">Must have (matching everything standard on a 2024)</div>
+        <ul>
+          <li>Interior: Black (Perfect Fit) or Monaco/Kemora Gray (Alternates) — no Santos Brown this round</li>
+          <li><strong>9EF Full Leather Interior package</strong> confirmed — this is what brings ventilated seats + Dinamica headliner on a 2023 (both standard on 2024, optional here)</li>
+          <li><strong>9EC Carbon Performance package</strong> confirmed — brings Power Steering Plus, laser high-beam headlights, and illuminated door sills (all standard on 2024, optional here)</li>
+          <li>Panoramic glass roof confirmed, not assumed (3FG option code or window sticker/photo)</li>
+          <li>Clean title strongly preferred — buyback/lemon tracked separately below</li>
+          <li>No structural damage</li>
+        </ul>
+      </div>
+      <div class="criteria-group">
+        <div class="criteria-label">Note</div>
+        <p>LED interior ambient lighting is the one 2024-standard item no 2023 can be optioned into — every car below is missing it regardless of packages. Not a hard requirement, just a known permanent gap vs. a 2024, same as the ~17-mile smaller EPA range.</p>
+      </div>
+    </div>
+  </details>
+
+  <div class="section-label">Perfect Fit (7)</div>
+  <div class="listings">
+
+    <div class="card" data-id="audi-northshore-2023" data-vin="WAUBHBFW6P7903308">
+      <img class="card-thumb" src="images/audi-northshore-2023.jpg" alt="2023 Audi RS e-tron GT at Audi North Shore, Brown Deer WI">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.audinorthshore.com/en/inventory/vehicle/?isdealer&amp;market=usuc&amp;vehicleId=WAUBHBFW6P7903308" target="_blank" rel="noopener">Audi North Shore</a><button class="edit-btn" data-id="audi-northshore-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="audi-northshore-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Brown Deer, WI</div>
+        </div>
+        <div class="price">$72,498</div>
+      </div>
+      <div class="spec-row">
+        <span>10,549 mi</span><span class="sep">·</span><span>Daytona Gray Pearl / Black</span><span class="sep">·</span><span>VIN WAUBHBFW6P7903308</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+14142956007">(414) 295-6007</a>
+        <span class="dom">~26 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-ok">✓ Roof (3FG)</span>
+        <span class="tag tag-bonus">+ Ceramic Brake Package</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+      </div>
+      <div class="status-line status-verify">Equipment fully confirmed — title not yet checked</div>
+      <details class="card-note">
+        <summary><span class="note-text">Both packages and the roof confirmed via Visor option codes (9EF, 9EC, 3FG), plus a bonus Ceramic Brake Package not on any other 2023 candidate. Black interior confirmed via JN code. No vhr_url available to check title for free — call before treating as clean. Highest price of the fully-equipped Perfect Fit cars, but lowest mileage among them.</span></summary>
+      </details>
+    </div>
+
+    <div class="card" data-id="northbay-ct-1-2023" data-vin="WAUBHBFW1P7900736">
+      <img class="card-thumb" src="images/northbay-ct-1-2023.jpg" alt="2023 Audi RS e-tron GT at North Bay Imports, East Windsor CT">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.northbayimports.com/used/Audi/2023-Audi-RS-e-tron-GT-f85bec7bac185184d8a067b15ddbfb2c.htm" target="_blank" rel="noopener">North Bay Imports</a><button class="edit-btn" data-id="northbay-ct-1-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="northbay-ct-1-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">East Windsor, CT</div>
+        </div>
+        <div class="price">$62,995</div>
+      </div>
+      <div class="spec-row">
+        <span>23,607 mi</span><span class="sep">·</span><span>Mythos Black Metallic / Black</span><span class="sep">·</span><span>VIN WAUBHBFW1P7900736</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+18883792904">(888) 379-2904</a>
+        <span class="dom">~6 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-ok">✓ Clean title (CARFAX)</span>
+      </div>
+      <div class="status-line status-verify">Clean title confirmed — roof still unconfirmed</div>
+      <details class="card-note">
+        <summary><span class="note-text">Both packages confirmed via Visor option codes (9EF, 9EC); no 3FG code present, so roof isn't confirmed either way — absence of the code isn't disconfirming on its own, same pattern as other tracked cars, worth a window-sticker photo or call. CARFAX free preview: no branded-title badge, "No Accidents or Damage Reported," 2 previous owners (personal lease both), "Good Value" $63,890 vs. this $62,995 asking price. Black interior — Perfect Fit tier.</span></summary>
+      </details>
+    </div>
+
+    <div class="card" data-id="audi-englewood-2023" data-vin="WAUBHBFW2P7901507">
+      <img class="card-thumb" src="images/audi-englewood-2023.jpg" alt="2023 Audi RS e-tron GT at Audi Englewood, NJ">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.audienglewood.com/en/inventory/vehicle/?isdealer&amp;market=usuc&amp;vehicleId=WAUBHBFW2P7901507" target="_blank" rel="noopener">Audi Englewood</a><button class="edit-btn" data-id="audi-englewood-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="audi-englewood-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Englewood, NJ</div>
+        </div>
+        <div class="price">$69,586</div>
+      </div>
+      <div class="spec-row">
+        <span>20,728 mi</span><span class="sep">·</span><span>Mythos Black Metallic / Black</span><span class="sep">·</span><span>VIN WAUBHBFW2P7901507</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+12018469053">(201) 846-9053</a>
+        <span class="dom">~12 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+      </div>
+      <div class="status-line status-verify">Needs verification — roof &amp; title unconfirmed</div>
+      <details class="card-note">
+        <summary><span class="note-text">Both packages confirmed via Visor option codes (9EF, 9EC). No 3FG code — roof unconfirmed. No vhr_url available to check title for free either. Black interior — Perfect Fit tier, pending a call.</span></summary>
+      </details>
+    </div>
+
+    <div class="card" data-id="auditysons-va-2-2023" data-vin="WAUBHBFW1P7900705">
+      <img class="card-thumb" src="images/auditysons-va-2-2023.jpg" alt="2023 Audi RS e-tron GT at Audi Tysons Corner, Vienna VA">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.auditysonscornerva.com/en/inventory/vehicle/?isdealer&amp;market=usuc&amp;vehicleId=WAUBHBFW1P7900705" target="_blank" rel="noopener">Audi Tysons Corner</a><button class="edit-btn" data-id="auditysons-va-2-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="auditysons-va-2-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Vienna, VA</div>
+        </div>
+        <div class="price">$69,540</div>
+      </div>
+      <div class="spec-row">
+        <span>9,071 mi</span><span class="sep">·</span><span>Daytona Gray Pearl / Black</span><span class="sep">·</span><span>VIN WAUBHBFW1P7900705</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+15716464809">(571) 646-4809</a>
+        <span class="dom">~84 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+      </div>
+      <div class="status-line status-verify">Needs verification — roof &amp; title unconfirmed</div>
+      <details class="card-note">
+        <summary><span class="note-text">Both packages confirmed via Visor option codes (9EF, 9EC); Black interior confirmed via JN code. No 3FG — roof unconfirmed. No vhr_url for a free title check. Low mileage (9,071mi) for the price. Perfect Fit tier, pending a call.</span></summary>
+      </details>
+    </div>
+
+    <div class="card" data-id="audi-atlanta-2-2023" data-vin="WAUBHBFW9P7901651">
+      <img class="card-thumb" src="images/audi-atlanta-2-2023.jpg" alt="2023 Audi RS e-tron GT at Audi Atlanta, GA">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.audiatlanta.com/en/inventory/vehicle/?isdealer&amp;market=usuc&amp;vehicleId=WAUBHBFW9P7901651" target="_blank" rel="noopener">Audi Atlanta</a><button class="edit-btn" data-id="audi-atlanta-2-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="audi-atlanta-2-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Atlanta, GA</div>
+        </div>
+        <div class="price">$65,794</div>
+      </div>
+      <div class="spec-row">
+        <span>19,251 mi</span><span class="sep">·</span><span>Mythos Black Metallic / Black</span><span class="sep">·</span><span>VIN WAUBHBFW9P7901651</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+14704127566">(470) 412-7566</a>
+        <span class="dom">~116 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-bonus">+ Ceramic Brake Package</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+      </div>
+      <div class="status-line status-verify">Needs verification — roof &amp; title unconfirmed</div>
+      <details class="card-note">
+        <summary><span class="note-text">Second car at this dealer (see the other Audi Atlanta listing above, which does have the roof confirmed). This one's options confirm 9EF and 9EC plus a bonus Ceramic Brake Package; Black interior via JN code. No 3FG code and no vhr_url, so roof and title both need a call. Longest days-on-market in this batch (116 days) — may have room to negotiate.</span></summary>
+      </details>
+    </div>
+
+
+    <div class="card" data-id="northbay-ct-3-2023" data-vin="WAUBHBFW6P7900814">
+      <img class="card-thumb" src="images/northbay-ct-3-2023.jpg" alt="2023 Audi RS e-tron GT at North Bay Imports, East Windsor CT">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.northbayimports.com/used/Audi/2023-Audi-RS-e-tron-GT-d146fd97ac18028bdbc4543e8fb7a826.htm" target="_blank" rel="noopener">North Bay Imports</a><button class="edit-btn" data-id="northbay-ct-3-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="northbay-ct-3-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">East Windsor, CT</div>
+        </div>
+        <div class="price">$58,660</div>
+      </div>
+      <div class="spec-row">
+        <span>20,028 mi</span><span class="sep">·</span><span>Mythos Black Metallic / Black</span><span class="sep">·</span><span>VIN WAUBHBFW6P7900814</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+18883792904">(888) 379-2904</a>
+        <span class="dom">~114 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+      </div>
+      <div class="status-line status-verify">Lowest price this batch — CARFAX blocked this run</div>
+      <details class="card-note">
+        <summary><span class="note-text">Both packages confirmed via Visor codes (9EF, 9EC). No 3FG — roof unconfirmed. The CARFAX check for this VIN also hit a bot-detection challenge — didn't attempt to solve it, so title is unverified. Cheapest fully-package-equipped 2023 found in the whole sweep; worth confirming roof and title before getting excited about the price. Longest days-on-market (114) here too.</span></summary>
+      </details>
+    </div>
+
+    <div class="card" data-id="fairfield-subaru-2023" data-vin="WAUBHBFW4P7900746">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.fairfieldsubaru.com/viewdetails/used/WAUBHBFW4P7900746" target="_blank" rel="noopener">Fairfield Subaru</a><button class="edit-btn" data-id="fairfield-subaru-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="fairfield-subaru-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Fairfield, CA</div>
+        </div>
+        <div class="price">$69,588</div>
+      </div>
+      <div class="spec-row">
+        <span>6,890 mi</span><span class="sep">·</span><span>Arkona White / Black</span><span class="sep">·</span><span>VIN WAUBHBFW4P7900746</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+17076086927">(707) 608-6927</a>
+        <span class="dom">~141 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+      </div>
+      <div class="status-line status-verify">Lowest mileage this batch — CARFAX blocked this run</div>
+      <details class="card-note">
+        <summary><span class="note-text">Both packages confirmed via Visor codes (9EF, 9EC). No 3FG — roof unconfirmed. CARFAX check hit a bot-detection challenge, didn't attempt to solve it — title unverified. Lowest mileage of the whole 2023 sweep (6,890mi). No thumbnail: Visor's photo for this listing is a generic stock image shared with another dealer's listing, not an actual photo of this car — omitted rather than show the wrong car.</span></summary>
+      </details>
+    </div>
+
+  </div>
+
+  <div class="section-label">Alternates (2)</div>
+  <div class="listings">
+
+    <div class="card" data-id="ourisman-frederick-2023" data-vin="WAUBHBFW3P7903007">
+      <img class="card-thumb" src="images/ourisman-frederick-2023.jpg" alt="2023 Audi RS e-tron GT at Ourisman Audi Volvo, Frederick MD">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.volvofrederick.com/used/Audi/2023-Audi-RS-e-tron-GT-frederick-md-f60ce775ac180771dd7429cbe68b1acf.htm" target="_blank" rel="noopener">Ourisman Audi Volvo</a><button class="edit-btn" data-id="ourisman-frederick-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="ourisman-frederick-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Frederick, MD</div>
+        </div>
+        <div class="price">$67,742</div>
+      </div>
+      <div class="spec-row">
+        <span>21,928 mi</span><span class="sep">·</span><span>Kemora Gray Metallic / Monaco Gray</span><span class="sep">·</span><span>VIN WAUBHBFW3P7903007</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+12406682545">(240) 668-2545</a>
+        <span class="dom">~6 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-ok">✓ Roof (3FG)</span>
+        <span class="tag tag-ok">✓ Clean title (CARFAX)</span>
+      </div>
+      <div class="status-line status-active">Active — fully verified, best Alternate match</div>
+      <details class="card-note">
+        <summary><span class="note-text">Best-equipped Alternates-tier find: both packages and the roof all confirmed directly via Visor option codes (9EF, 9EC, 3FG). CARFAX free preview: no branded-title badge, "No Accidents or Damage Reported," CARFAX 1-Owner, personal lease. Monaco Gray Nappa Leather interior (FQ code) — Alternates tier, not the Santos Brown being excluded this round.</span></summary>
+      </details>
+    </div>
+
+    <div class="card" data-id="auditysons-va-1-2023" data-vin="WAUBHBFW3P7902438">
+      <img class="card-thumb" src="images/auditysons-va-1-2023.jpg" alt="2023 Audi RS e-tron GT at Audi Tysons Corner, Vienna VA">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.auditysonscornerva.com/en/inventory/vehicle/?isdealer&amp;market=usuc&amp;vehicleId=WAUBHBFW3P7902438" target="_blank" rel="noopener">Audi Tysons Corner</a><button class="edit-btn" data-id="auditysons-va-1-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="auditysons-va-1-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Vienna, VA</div>
+        </div>
+        <div class="price">$70,994</div>
+      </div>
+      <div class="spec-row">
+        <span>21,215 mi</span><span class="sep">·</span><span>Kemora Gray Metallic / Monaco Gray</span><span class="sep">·</span><span>VIN WAUBHBFW3P7902438</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+15716464809">(571) 646-4809</a>
+        <span class="dom">~63 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-bonus">+ Ceramic Brake Package</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+      </div>
+      <div class="status-line status-verify">Needs verification — roof &amp; title unconfirmed</div>
+      <details class="card-note">
+        <summary><span class="note-text">Both packages confirmed via Visor codes (9EF, 9EC) plus a bonus Ceramic Brake Package; Monaco Gray Nappa Leather interior (FQ). No 3FG code and no vhr_url — both roof and title need a call. Highest price of the Alternates-tier cars.</span></summary>
+      </details>
+    </div>
+
+  </div>
+
+  <div class="section-label">Buyback / Lemon Titles — Worth a Call (2)</div>
+  <p class="section-note">Same policy as the 2024 tier — tracked, not hard-excluded, but call for the specific defect before deciding.</p>
+  <div class="listings">
+
+    <div class="card" data-id="idrive-berwyn-2023" data-vin="WAUBHBFW2P7903063">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.idrivechicago.com/viewdetails/used/WAUBHBFW2P7903063" target="_blank" rel="noopener">iDrive Motor Sports</a><button class="edit-btn" data-id="idrive-berwyn-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="idrive-berwyn-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Berwyn, IL</div>
+        </div>
+        <div class="price">$60,065</div>
+      </div>
+      <div class="spec-row">
+        <span>14,366 mi</span><span class="sep">·</span><span>Suzuka Gray Metallic / Black</span><span class="sep">·</span><span>VIN WAUBHBFW2P7903063</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+17083812757">(708) 381-2757</a>
+        <span class="dom">~86 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (window sticker)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (window sticker)</span>
+        <span class="tag tag-ok">✓ Roof (window sticker)</span>
+        <span class="tag tag-ok">✓ No accidents/structural (full CARFAX)</span>
+        <span class="tag tag-verify">⚠ Buyback/Lemon — call for details</span>
+      </div>
+      <div class="status-line status-verify">Buyback title — the single most-verified car on this tracker, 2023 or 2024</div>
+      <details class="card-note">
+        <summary><span class="note-text">The one car on this whole tracker verified against its actual factory Monroney window sticker, not just Visor codes. Confirms: Carbon performance package ($6,450 — Audi laser light, Power steering plus w/ rear wheel steering, illuminated carbon fiber door sills) and Full leather interior package ($5,350 — Dinamica headliner, ventilation and massage for front seats), plus "Panoramic fixed glass roof — Included" as its own separate line. Matches everything standard on a 2024 except LED interior ambient lighting, which isn't on the sticker anywhere. Full CARFAX: DMV-sourced "MANUFACTURER BUYBACK OR LEMON REPORTED" (7/29/2025) plus seller disclosure at resale (5/25/2026), no accidents, no structural damage, no total loss, 1-owner personal lease. Original MSRP $157,790 — now $60,065, a 62% discount. No thumbnail: Visor's photo for this listing is a generic white-car stock image, not this actual Suzuka Gray car — omitted rather than show the wrong car.</span></summary>
+      </details>
+    </div>
+
+    <div class="card" data-id="northbay-ct-2-2023" data-vin="WAUBHBFW0P7900727">
+      <img class="card-thumb" src="images/northbay-ct-2-2023.jpg" alt="2023 Audi RS e-tron GT at North Bay Imports, East Windsor CT">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.northbayimports.com/used/Audi/2023-Audi-RS-e-tron-GT-b3dd9610ac181e22457d1d20cf9ce3c2.htm" target="_blank" rel="noopener">North Bay Imports</a><button class="edit-btn" data-id="northbay-ct-2-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="northbay-ct-2-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">East Windsor, CT</div>
+        </div>
+        <div class="price">$63,811</div>
+      </div>
+      <div class="spec-row">
+        <span>5,133 mi</span><span class="sep">·</span><span>Daytona Gray Pearl / Black</span><span class="sep">·</span><span>VIN WAUBHBFW0P7900727</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+18883792904">(888) 379-2904</a>
+        <span class="dom">~70 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-ok">✓ No accidents (CARFAX)</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-verify">⚠ Buyback/Lemon — call for details</span>
+      </div>
+      <div class="status-line status-verify">Buyback title, confirmed via CARFAX — roof still unconfirmed</div>
+      <details class="card-note">
+        <summary><span class="note-text">CARFAX free preview shows a "BRANDED TITLE — Buyback/Lemon" badge directly, plus "No Accidents or Damage Reported to CARFAX." Both option packages confirmed via Visor (9EF, 9EC); no 3FG code, so roof still needs a photo or call. Very low mileage for a 2023 (5,133mi). Black interior — would be Perfect Fit tier if this were a clean title.</span></summary>
+      </details>
+    </div>
+
+  </div>
+
+  <details class="excluded">
+    <summary>Excluded / disqualified (11)</summary>
+    <div class="excluded-list">
+      <div class="excluded-item"><strong>Riverside, CA</strong> — Audi Riverside, Mythos Black Metallic/Arras Red, $67,885, 8,538mi, VIN WAUBHBFW5P7901677 — Arras Red interior confirmed directly on the dealer's own page ("Color: Mythos Black metallic / Arras Red"); hard-exclude per requirement #1. Had briefly been flagged as this tracker's single best 2023 match (both packages + roof + clean title all confirmed) before this correction — same bad "no interior code = Black" assumption that also caught out the Atlanta car below, prompted by Stiles spotting the Atlanta error first.</div>
+      <div class="excluded-item"><strong>Sheboygan, WI</strong> — Van Horn Volkswagen, Daytona Gray Pearl/Black, $63,195, 14,412mi, VIN WAUBHBFW6P7902059 — confirmed sold/delisted: the dealer's VDP now redirects to their generic 155-vehicle inventory page with no Audi listed, matching the tracker's standing rule that a VDP-to-generic-inventory redirect means sold even if Visor still shows it active. Both packages had been confirmed (9EF, 9EC); title was never resolved (CARFAX paywalled) before this was caught.</div>
+      <div class="excluded-item"><strong>Highland Park, IL</strong> — Genesis of Highland Park, Kemora Gray Metallic/Black, $59,868, 13,175mi, VIN WAUBHBFW1P7903720 — confirmed sold/delisted: the dealer's VDP now redirects to their generic inventory page, which only lists Genesis-brand vehicles (no Audi). Both packages had been confirmed (9EF, 9EC); title check had been blocked by a CARFAX bot-detection challenge before this was caught.</div>
+      <div class="excluded-item"><strong>Sheboygan, WI</strong> — Van Horn Volkswagen, Daytona Gray Pearl/Monaco Gray, $65,165, 2,422mi, VIN WAUBHBFW5P7903381 — confirmed sold/delisted, same VDP-redirect evidence as the other Van Horn Sheboygan car above (same dealer, different VIN). Had been the near-new (2,422mi) Alternates-tier pick; both packages were confirmed (9EF, 9EC), roof and title were never resolved.</div>
+      <div class="excluded-item"><strong>Atlanta, GA</strong> — Audi Atlanta, Suzuka Gray Metallic/Arras Red, $62,794, 35,518mi, VIN WAUBHBFW9P7901987 — Arras Red interior confirmed via a Stiles-reviewed interior photo showing red leather seats; hard-exclude per requirement #1. Had been wrongly defaulted to "Black" since Visor's options data carried no interior color code for this VIN — a bad assumption, corrected here. Both packages (9EF, 9EC) and the roof (3FG) were otherwise confirmed, and title was still unverified when this was caught.</div>
+      <div class="excluded-item"><strong>Columbus, OH</strong> — Audi Columbus, Arkona White/Santos Brown, $73,447, 6,966mi, VIN WAUBHBFW8P7901477 — otherwise fully equipped (9EC + 9EF both confirmed), but Santos Brown interior excluded per updated preference — no brown this round.</div>
+      <div class="excluded-item"><strong>Vienna, VA</strong> — Audi Tysons Corner, Mythos Black Metallic/Santos Brown, $68,495, 22,870mi, VIN WAUBHBFW6P7902532 — the most fully-equipped car in the whole 2023 sweep (9EC + 9EF + 3FG roof all confirmed), excluded purely for Santos Brown interior per updated preference. Re-add if the brown exclusion is ever relaxed.</div>
+      <div class="excluded-item"><strong>Libertyville, IL</strong> — Gregory INFINITI, Mythos Black Metallic, $54,289, 42,450mi, VIN WAUAHBFW1P7901820 — WAUAHBFW VIN prefix (vs. the usual WAUBHBFW), the same lower-base-spec pattern confirmed elsewhere on this tracker; no 9EF Full Leather Interior code present, so ventilation is unconfirmed and likely absent.</div>
+      <div class="excluded-item"><strong>Manassas, VA</strong> — Perfect Auto, Mythos Black Metallic, $68,999, 14,443mi, VIN WAUAHBFW7P7901711 — same WAUAHBFW lower-spec VIN prefix; no options codes at all beyond exterior paint, neither package confirmed.</div>
+      <div class="excluded-item"><strong>Layton, UT</strong> — Young Volkswagen, Arkona White, $67,122, 21,674mi, VIN WAUBHBFW9P7903738 — no 9EC or 9EF option codes present; ventilation and both packages unconfirmed and likely absent.</div>
+      <div class="excluded-item"><strong>Mcminnville, OR</strong> — Volkswagen of McMinnville, Arkona White/Black, $60,745, 41,196mi, VIN WAUBHBFWXP7902209 — Black interior confirmed (JN) but no 9EC or 9EF present; ventilation unconfirmed and likely absent given no Full Leather Interior package. Highest mileage in the entire 2023 sweep.</div>
+    </div>
+  </details>
+
+  </div>
+
 </main>
 
 <footer>
@@ -1000,6 +1405,17 @@
     card.addEventListener('click', function(e) {
       if (e.target.closest('a, button')) return;
       window.location.href = card.getAttribute('data-detail');
+    });
+  });
+})();
+
+(function() {
+  Array.prototype.forEach.call(document.querySelectorAll('.tab-btn'), function(btn) {
+    btn.addEventListener('click', function() {
+      Array.prototype.forEach.call(document.querySelectorAll('.tab-btn'), function(b) { b.classList.remove('active'); });
+      Array.prototype.forEach.call(document.querySelectorAll('.tab-panel'), function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.getAttribute('data-tab')).classList.add('active');
     });
   });
 })();
