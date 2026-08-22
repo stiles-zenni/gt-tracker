@@ -548,14 +548,14 @@
     <h1>2024 RS e-tron GT Tracker</h1>
     <button class="check-now-btn" id="checkNowBtn" type="button">⟳ Check now</button>
   </div>
-  <div class="updated">Updated Aug 20, 2026 · 22 tracked</div>
+  <div class="updated">Updated Aug 22, 2026 · 23 tracked</div>
 </header>
 
 <main>
 
   <div class="tab-nav">
     <button class="tab-btn active" type="button" data-tab="2024">2024 (8)</button>
-    <button class="tab-btn" type="button" data-tab="2023">2023 (14)</button>
+    <button class="tab-btn" type="button" data-tab="2023">2023 (15)</button>
   </div>
 
   <div class="sort-row">
@@ -681,7 +681,7 @@
       </div>
       <div class="status-line status-active">Active — fully verified</div>
       <details class="card-note">
-        <summary><span class="note-text">Re-added: Visor's VIN lookup had 404'd for this car (routine excluded it Aug 13 as "likely sold"), but Stiles called Guaranteed Motor Cars directly yesterday (~1pm) and confirmed the car was still on the lot — a direct dealer confirmation beats an automated 404, which can lag or glitch independent of actual availability. All five hard requirements remain confirmed from the original verification: Stock #LV875 (a genuinely different VIN from the previously-excluded Lake Villa car, stock #1513668), black interior confirmed via CarGurus' structured field, roof and ventilation confirmed via reviewed interior gallery photos, and a full CARFAX pull (not CarGurus' summary) showing guaranteed "Lemon — No Problem" title history, no accidents, no structural damage, no total loss, 1-owner personal lease. No open recalls. Could not reach the dealer's own direct listing page; link is CarGurus for now. Worth a quick re-check before anyone drives out, given the VIN's flakiness on Visor, but no reason to distrust it otherwise.</span></summary>
+        <summary><span class="note-text">Re-added: Visor's VIN lookup had 404'd for this car (routine excluded it Aug 13 as "likely sold"), but Stiles called Guaranteed Motor Cars directly yesterday (~1pm) and confirmed the car was still on the lot — a direct dealer confirmation beats an automated 404, which can lag or glitch independent of actual availability. All five hard requirements remain confirmed from the original verification: Stock #LV875 (a genuinely different VIN from the previously-excluded Lake Villa car, stock #1513668), black interior confirmed via CarGurus' structured field, roof and ventilation confirmed via reviewed interior gallery photos, and a full CARFAX pull (not CarGurus' summary) showing guaranteed "Lemon — No Problem" title history, no accidents, no structural damage, no total loss, 1-owner personal lease. No open recalls. Could not reach the dealer's own direct listing page; link is CarGurus for now. Worth a quick re-check before anyone drives out, given the VIN's flakiness on Visor, but no reason to distrust it otherwise. Update 8/22: Visor 404'd on this VIN again this run — same flaky pattern as before, a strong-but-not-certain sold signal per the tracker's own rule, not treated as confirmed since the phone confirmation was so recent and network egress was blocked network-wide this run (couldn't cross-check the dealer's own page or CarGurus). Worth another quick call before anyone drives out; not excluding on an automated 404 alone.</span></summary>
       </details>
     </div>
 
@@ -893,7 +893,7 @@
     </div>
   </details>
 
-  <div class="section-label">Perfect Fit (10)</div>
+  <div class="section-label">Perfect Fit (11)</div>
   <div class="listings">
 
     <div class="card" data-id="audi-northshore-2023" data-vin="WAUBHBFW6P7903308" data-price="72498" data-miles="10549">
@@ -1180,6 +1180,33 @@
       </details>
     </div>
 
+    <div class="card" data-id="carmax-lynnwood-2023" data-vin="WAUBHBFW6P7903096" data-price="65998" data-miles="17178">
+      <div class="card-top">
+        <div>
+          <div class="dealer-link"><a href="https://www.carmax.com/car/28536149" target="_blank" rel="noopener">CarMax Lynnwood</a><button class="edit-btn" data-id="carmax-lynnwood-2023" aria-label="Edit listing link">✎</button><button class="exclude-btn" data-id="carmax-lynnwood-2023" aria-label="Exclude listing">✕</button></div>
+          <div class="location">Lynnwood, WA</div>
+        </div>
+        <div class="price">$65,998</div>
+      </div>
+      <div class="spec-row">
+        <span>17,178 mi</span><span class="sep">·</span><span>Mythos Black Metallic / Black</span><span class="sep">·</span><span>VIN WAUBHBFW6P7903096</span>
+      </div>
+      <div class="meta-row">
+        <a class="phone-link" href="tel:+14256973206">(425) 697-3206</a>
+        <span class="dom">~78 days listed</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-ok">✓ Ventilation + Dinamica headliner (9EF)</span>
+        <span class="tag tag-ok">✓ Power steering plus + laser + sills (9EC)</span>
+        <span class="tag tag-verify">? Roof — needs verification</span>
+        <span class="tag tag-verify">? Clean title — needs verification</span>
+      </div>
+      <div class="status-line status-verify">New find — CarMax, roof &amp; title unconfirmed</div>
+      <details class="card-note">
+        <summary><span class="note-text">New 2023 find (Visor search, 8/22) — first tracked car sold by CarMax rather than an Audi/VW rooftop or independent dealer. Both packages confirmed via Visor option codes (9EC Carbon Performance, 9EF Full Leather Interior — ventilation). No 3FG code, so roof is unconfirmed like most of this batch. Black interior (JN code) — Perfect Fit tier. CarMax's own no-haggle pricing model is a mild positive signal on price transparency, but that's not the same as a pulled CARFAX — title still needs independent confirmation, not assumed clean just because it's CarMax. Couldn't go further this run: network egress was blocked network-wide (WebFetch and curl both failed against every external host tried, including carmax.com itself), so no dealer-page cross-check, no CARFAX pull, and no thumbnail photo could be downloaded despite Visor listing 14 photo URLs. Out-of-state (WA) — meets every hard requirement found so far regardless, worth a shipping estimate. Re-verify roof/title and grab a photo next run once network access is back.</span></summary>
+      </details>
+    </div>
+
   </div>
 
   <div class="section-label">Alternates (1)</div>
@@ -1207,9 +1234,9 @@
         <span class="tag tag-ok">✓ Roof (3FG)</span>
         <span class="tag tag-ok">✓ Clean title (CARFAX)</span>
       </div>
-      <div class="status-line status-active">Active — fully verified, best Alternate match</div>
+      <div class="status-line status-verify">Fully verified, best Alternate match — Visor now shows "missing," recheck</div>
       <details class="card-note">
-        <summary><span class="note-text">Best-equipped Alternates-tier find: both packages and the roof all confirmed directly via Visor option codes (9EF, 9EC, 3FG). CARFAX free preview: no branded-title badge, "No Accidents or Damage Reported," CARFAX 1-Owner, personal lease. Monaco Gray Nappa Leather interior (FQ code) — Alternates tier, not the Santos Brown being excluded this round. Price down $192 on today's (8/20) Visor check ($67,742 → $67,550); Visor now also names the rooftop "Volvo Cars of Frederick" rather than Ourisman Audi Volvo — same store, same VDP link, no action needed.</span></summary>
+        <summary><span class="note-text">Best-equipped Alternates-tier find: both packages and the roof all confirmed directly via Visor option codes (9EF, 9EC, 3FG). CARFAX free preview: no branded-title badge, "No Accidents or Damage Reported," CARFAX 1-Owner, personal lease. Monaco Gray Nappa Leather interior (FQ code) — Alternates tier, not the Santos Brown being excluded this round. Price down $192 on today's (8/20) Visor check ($67,742 → $67,550); Visor now also names the rooftop "Volvo Cars of Frederick" rather than Ourisman Audi Volvo — same store, same VDP link, no action needed. Flag 8/22: Visor's status field for this VIN flipped to "missing" this run (vs. active previously) — worth treating as a caution sign, though "missing" isn't Visor's explicit sold/delisted status either, and network egress was blocked network-wide this run so the dealer's own page couldn't be checked to confirm either way. Not moved to excluded on this alone per the tracker's own re-instatement guardrail (would need at least as strong evidence as what got it tracked). Worth a call to confirm it's still on the lot before relying on it.</span></summary>
       </details>
     </div>
 
